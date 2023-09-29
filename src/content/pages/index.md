@@ -3,7 +3,7 @@ template: index-page
 slug: /
 title: Shiva Pd. Gyawali
 tagline: Computer Engineer
-featuredImage: /assets/img_0890.jpg
+featuredImage: /assets/12393205962.png
 cta:
   ctaText: Know more
   ctaLink: /about
