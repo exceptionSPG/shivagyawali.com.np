@@ -1,28 +1,28 @@
 {
   "socialIcons": [
     {
-      "icon": "facebook",
-      "url": "https://www.facebook.com/stackrolecom"
-    },
-    {
-      "icon": "instagram",
-      "url": "https://www.instagram.com/stackrole/"
+      "icon": "youtube",
+      "url": "https://www.youtube.com/c/ShivaGyawali"
     },
     {
       "icon": "linkedin",
-      "url": "https://in.linkedin.com/company/stackrole"
+      "url": "https://www.linkedin.com/in/shiva-prasad-gyawali-440745159/"
     },
     {
-      "icon": "youtube",
-      "url": "https://www.youtube.com/channel/UCc1hYgIP_DzFMMzwLRcbDVQ"
+      "icon": "instagram",
+      "url": "https://www.instagram.com/exception_spg/"
     },
     {
-      "icon": "dribbble",
-      "url": "https://dribbble.com/stackrole"
+      "icon": "github",
+      "url": "https://github.com/exceptionSPG"
     },
     {
-      "icon": "tiktok",
-      "url": "https://tiktok.com/"
+      "icon": "wordpress",
+      "url": "https://kailaba.com"
+    },
+    {
+      "icon": "facebook",
+      "url": "https://www.facebook.com/shiva.gyawali.14"
     }
   ]
 }
