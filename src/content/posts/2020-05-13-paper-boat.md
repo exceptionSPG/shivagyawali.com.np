@@ -6,7 +6,7 @@ date: 2023-10-18 23:40
 description: |-2
    How to generate random password using python?
     Using gspread to save records to google sheets.
-featuredImage: /assets/andrew-seaman-4fi_4q6_efm-unsplash.jpg
+featuredImage: /assets/generate-saves.png
 ---
 Hey Champions, Let's explore more about our gspread and use this knowledge on real use case.
 
