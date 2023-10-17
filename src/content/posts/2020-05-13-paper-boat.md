@@ -163,4 +163,30 @@ if __name__=='__main__':
 
 Sample output when running this script:
 
+
+
+```shell
+(pscripting) exceptionspg@Dell-5583:~/.../python-code$ python write-password-to-gsheet.py 
+How many characters do you want in your password? 10
+Fw"CzPr87*
+Do you use this?Y
+Username:article-demo
+Where? how you remember it?shivagyawali.com.np
+Record saved successfully.
+Do you want to display the records?(Y/N)Y
+Date	Username	Password	Where	
+
+2023-10-17	shiva	HR6ov1W@gxQ>	facebook	
+
+2023-10-17	article-demo	Fw"CzPr87*	shivagyawali.com.np	
+```
+
+
+
 ![script output](/assets/script-output.png "Script  sample output")
+
+
+
+You can use this script in any way. Thank you for reading :)
+
+Happy Learning.
