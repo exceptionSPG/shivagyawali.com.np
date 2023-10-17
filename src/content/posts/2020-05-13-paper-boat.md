@@ -158,12 +158,9 @@ if __name__=='__main__':
             "where": where
             }
     write_to_sheet(DATA_DICT)
-
 ```
 
 Sample output when running this script:
-
-
 
 ```shell
 (pscripting) exceptionspg@Dell-5583:~/.../python-code$ python write-password-to-gsheet.py 
@@ -181,9 +178,11 @@ Date	Username	Password	Where
 2023-10-17	article-demo	Fw"CzPr87*	shivagyawali.com.np	
 ```
 
-
-
 ![script output](/assets/script-output.png "Script  sample output")
+
+Stored records in Google Sheet:
+
+![Sheet records](/assets/screenshot-from-2023-10-18-00-17-58.png "Saved records in Google Sheet")
 
 
 
