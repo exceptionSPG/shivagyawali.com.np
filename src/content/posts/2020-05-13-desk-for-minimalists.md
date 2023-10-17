@@ -1,54 +1,206 @@
 ---
 template: blog-post
-title: Desk for minimalists
-slug: /minimalists-desk
-date: 2020-05-13 12:46
-description: sdasd
+title: Creating LVM on ubuntu 22.04
+slug: /creating-lvm-on-ubuntu-22.04
+date: 2023-10-17 12:46
+description: lvm, logical volume manager
 featuredImage: /assets/bench-accounting-nvzvopqw0gc-unsplash.jpg
 ---
+Creating LVM (Logical Volume Management) on Ubuntu 22.04 allows you to efficiently manage storage resources by combining multiple disks or partitions into a single logical volume. 
 
-Uh, is the puppy mechanical in any way? Maybe I love you so much I love you no matter who you are pretending to be. If rubbin' frozen dirt in your crotch is wrong, hey I don't wanna be right. I found what I need. And it's not friends, it's things.
+In this blog post, we will explore the step-by-step process of creating LVM on Ubuntu 22.04, including adding new disks, creating physical volumes, volume groups, and logical volumes. We will also cover formatting and mounting the newly created logical volumes. Let's dive in and learn how to harness the power of LVM for flexible and scalable storage management.
 
-That's the ONLY thing about being a slave. OK, if everyone's finished being stupid. Bender, we're trying our best. Fry! Stay back! He's too powerful! I just told you! **You've killed me!** _And yet you haven't said what I told you to say!_ How can any of us trust you?
+> Environment:\
+> Machine: Ubuntu-22.04 (on VMWare)
 
-![Royal Mail](/assets/royal-mail-unsplash.jpg "Royal Mail from Unsplash")
+## Add new disk to vm
 
-## It doesn't look so shiny to me.
+* shutdown VM
+* Click settings > Add device
 
-No! I want to live! There are still too many things I don't own! It doesn't look so shiny to me. I'm just glad my fat, ugly mama isn't alive to see this day. Soon enough. I'm sure those windmills will keep them cool.
+  ![Adding device](/assets/untitled.png "Add new disk to vm")
+* then add new disk
 
-![]()
+  ![add new disk](/assets/untitled-1-.png "add new disk to the device")
 
-1. Guards! Bring me the forms I need to fill out to have her taken away!
-2. Have you ever tried just turning off the TV, sitting down with your children, and hitting them?
-3. You, a bobsleder!? That I'd like to see!
+  Then, lsblk command will show new disk, sdb for us
+*
 
-### Daylight and everything.
+## Creating LVM on Ubuntu:
 
-A true inspiration for the children. Anyone who laughs is a communist! Can I use the gun? Oh, how I wish I could believe or understand that! There's only one reasonable course of action now: kill Flexo!
+This shows the pictorial demonstration of creating LVM.
 
-- Fry! Stay back! He's too powerful!
-- Look, last night was a mistake.
-- Please, Don-Bot… look into your hard drive, and open your mercy file!
 
-And I'm his friend Jesus. One hundred dollars. There, now he's trapped in a book I wrote: a crummy world of plot holes and spelling errors! No! The cat shelter's on to me.
 
-Fry! Quit doing the right thing, you jerk! I'm sure those windmills will keep them cool. I'm Santa Claus! Leela's gonna kill me. Then we'll go with that data file!
+![LVM ](/assets/pasted-image-20230728064708.png "Logical volume manager")
 
-That's right, baby. I ain't your loverboy Flexo, the guy you love so much. You even love anyone pretending to be him! Bite my shiny metal ass. Tell them I hate them. Yeah, and if you were the pope they'd be all, "Straighten your pope hat." And "Put on your good vestments."
 
-That's a popular name today. Little "e", big "B"? Hey, whatcha watching? A sexy mistake. A true inspiration for the children. Shut up and get to the point!
 
-Ven ve voke up, ve had zese wodies. Oh, all right, I am. But if anything happens to me, tell them I died robbing some old man. So, how 'bout them Knicks? Oh Leela! You're the only person I could turn to; you're the only person who ever loved me.
+## Steps in creating LVM:
 
-Shut up and get to the point! Take me to your leader! I can explain. It's very valuable. You guys realize you live in a sewer, right?
+![steps in creating lvm](/assets/lvm-steps.png "Steps in Creating LVM")
 
-Robot 1-X, save my friends! And Zoidberg! Oh Leela! You're the only person I could turn to; you're the only person who ever loved me. I guess because my parents keep telling me to be more ladylike. As though!
 
-I daresay that Fry has discovered the smelliest object in the known universe! Oh right. I forgot about the battle. Oh dear! She's stuck in an infinite loop, and he's an idiot! Well, that's love for you.
 
-You wouldn't. Ask anyway! Is today's hectic lifestyle making you tense and impatient? Ven ve voke up, ve had zese wodies. Doomsday device? Ah, now the ball's in Farnsworth's court!
+```shell
+# check if disk is attached
+lsblk
+# See output below
 
-Fatal. Maybe I love you so much I love you no matter who you are pretending to be. Really?! You can see how I lived before I met you. Alright, let's mafia things up a bit. Joey, burn down the ship. Clamps, burn down the crew.
 
-Enough about your promiscuous mother, Hermes! We have bigger problems. Bender, being God isn't easy. If you do too much, people get dependent on you, and if you do nothing, they lose hope. You have to use a light touch. Like a safecracker, or a pickpocket.
+# format this sdb disk with gpt
+parted /dev/sdb
+# this will enter us to parted interactive shell
+(parted) mklabel gpt
+
+# create a partition
+(parted) mkpart primary ext4 1049KB 100%
+(parted) print free
+(parted) set 1 lvm on # this will set lvm on to just created ext4 partition
+(parted) quit
+# See output below
+
+
+# check disk again, to see our created partition
+lsblk
+```
+
+Output: lsblk
+
+![lsblk-output](/assets/lvm_lsblk.png "output: lsblk")
+
+output: parted commands:
+
+![ext4 partition](/assets/lvm_ext4partition.png "output: parted with ext4")
+
+See newly created partition:\
+Output: lsblk
+
+![newly created partition](/assets/lvm_lsblk-newcreatedpartition.png "Output: Newly created partition")
+
+
+
+Till now, We created the partition with new disk, however, physical volume is still not created.
+
+
+
+## Create physical volume
+
+```shell
+# list physical volumes
+pvs
+
+# create physical volume with our partition.
+pvcreate /dev/sdb1
+```
+
+Output: pvs
+
+![pvs before creating](/assets/lvm_physical-vol-before-creating.png "Output: pvs (before creating new)")
+
+Output after creating pv:
+
+![lvm create pv](/assets/lvm_created_pv.png "output: pvcreate /dev/sdb1")
+
+## create volume group
+
+
+
+```shell
+vgs
+
+# create new volume group with our created physical volume
+vgcreate <vg-name> /dev/sdb1
+
+```
+
+Output: vgs\
+vgcreate <vg-name> /dev/sdb1
+
+![lvm: create volume group](/assets/lvm_create_volumegroup.png "output: vgs, vgcreate")
+
+
+
+
+
+
+
+## create logical volume
+
+Now, we are going to create two logical volume, one with 2G and another with 3G size.
+
+```shell
+# list available logical volumes
+lvs
+
+# create new logical volume from our newly created vg
+lvcreate -n <name> -L <size> <vg-name>
+lvcreate -n primary-lv -L 2G test-vg
+
+# create another lv from available memory
+~~lvcreate -n secondary_lv -L 100%FREE test-vg~~
+
+# don't know why it needs small l
+lvcreate -n secondary_lv -l 100%FREE test-vg
+
+lvs
+```
+
+**Caution**:
+
+> **\-l :** is for specifying extent, like 50%, or 7 extent. \
+> **\-L** : to extend the logical volume by specifying a specific size in units like bytes, kilobytes, megabytes, gigabytes, etc
+
+
+
+![lvm create lvm](/assets/lvm_createlvm.png "Output: lvcreate")
+
+
+
+## format both lvm with ext4
+
+```shell
+mkfs.ext4 /dev/test-vg/primary-test_lv
+
+mkfs.ext4 /dev/test-vg/secondary-test_lv
+```
+
+
+
+![format lvm with ext4](/assets/pasted-image-20230818111919.png "Format lvm with ext4")
+
+
+
+## mount created lvm
+
+
+
+
+
+```shell
+
+# create two directory to mount
+mkdir /test-primary_storage
+mkdir /test-secondary_storage
+
+# check initial mounted file systems
+df -hT
+
+# mount created lv with mount point
+mount <device> <mount-point>
+mount /dev/test-vg/primary-test_lv /test-primary_storage
+mount /dev/test-vg/secondary-test_lv /test-secondary_storage
+
+# check if our mount is successfull
+df -hT
+```
+
+
+
+![lvm mount lvms](/assets/lvm_mount-lvms.png "LVM mount lvms")
+
+
+
+Still, this is not persistently saved. If we now reboot our system, these changes will not be reflected. For this to be implemented persistently, we need to make it persistent.
+
+We will learn how to make this lvm persistent on our another article here.
