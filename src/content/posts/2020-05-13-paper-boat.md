@@ -1,32 +1,166 @@
 ---
 template: blog-post
-title: Character design
-slug: /character-design
-date: 2020-05-23 23:40
-description: How to draw a character
+title: Password generator and recorder using python and gspread
+slug: /generate-save-random-password-python-gspread
+date: 2023-10-18 23:40
+description: |-2
+   How to generate random password using python?
+    Using gspread to save records to google sheets.
 featuredImage: /assets/andrew-seaman-4fi_4q6_efm-unsplash.jpg
 ---
+Hey Champions, Let's explore more about our gspread and use this knowledge on real use case.
 
-In visual arts, a model sheet, also known as a character board, character sheet, character study or simply a study, is a document used to help standardize the appearance, poses, and gestures of a character in arts such as animation, comics, and video games.
+In this article, we will be creating a python script, which will use password generator and saves our used random generated password to google sheet.
 
-Model sheets are required when [multiple artists](https://example.com) are involved in the production of an animated film, game, or comic to help maintain continuity in characters from scene to scene. In animation, one animator may only do one shot out of the several hundred that are required to complete an animated feature film. A character not drawn according to the production's standardized model is referred to as off-model.
+I am using [Geeksforgeeks random password generator using python](https://www.geeksforgeeks.org/create-a-random-password-generator-using-python/) for generating random password. Utilized this as a method and used it further to store actually used password to google sheet.
 
-## For one beautiful night I knew what it was like to be a grandmother. Subjugated, yet honored.
+Before using this script, I assume that You already have:
 
-Yes! In your face, Gandhi! Ah, yes! John Quincy Adding Machine. He struck a chord with the voters when he pledged not to go on a killing spree. What are their names? I could if you hadn't turned on the light and shut off my stereo.
+* Installed the gspread python library\
+  `pip install gspread`
+* Setup the requirements, and already downloaded the **service_account.json** file\
+  **Follow this article**: ***[Accessing Google Sheets using python](https://shivagyawali.com.np/accessing-google-sheets-from-python)***
 
-1. Robot 1-X, save my friends! And Zoidberg!
-2. Soon enough.
-3. There's no part of that sentence I didn't like!
+```python
+import gspread
+import datetime
+import string
+import random
 
-### The key to victory is discipline, and that means a well made bed. You will practice until you can make your bed in your sleep.
 
-Why am I sticky and naked? Did I miss something fun? We're also Santa Claus! Soothe us with sweet lies. Hi, I'm a naughty nurse, and I really need someone to talk to. \$9.95 a minute.
+DATA_DICT = {}
+passwd = ''
+def write_to_sheet(data: dict):
+    gc = gspread.service_account(filename="/your/path/to/service_account.json")
+    sh = gc.open_by_key("<your-sheet-key>")
+    worksheet = sh.get_worksheet(0)
+    #worksheet_list = sh.worksheets()
+    dataList = list(data.values())
+    res = worksheet.append_row(dataList, table_range="A1:E1")
+    if res:
+        print("Record saved successfully.")
 
-- That could be 'my' beautiful soul sitting naked on a couch. If I could just learn to play this stupid thing.
-- We'll need to have a look inside you with this camera.
-- Fry! Quit doing the right thing, you jerk!
+    display = input("Do you want to display the records?(Y/N)")
+    if(display in ['Y','y']):
+        display_sheet_content(worksheet)
+    elif(display in ['N','n']):
+        pass
+    else:
+        print("Continuing without displaying\n\n")
+    
+def display_sheet_content(worksheet: gspread.worksheet.Worksheet):
+    values_list = worksheet.get_all_values()
+    for row in values_list:
+        l = len(row)
+        for i in range(l):
+            print(row[i], end='\t')
+        print('\n')
 
-Who said that? SURE you can die! You want to die?! Aww, it's true. I've been hiding it for so long. I videotape every customer that comes in here, so that I may blackmail them later. Ah, computer dating. It's like pimping, but you rarely have to use the phrase "upside your head."
+def retrievePass():
+    do_use=False
+    while not do_use:
+        passwd = passwordgen()
+        print(passwd)
+        use = input("Do you use this?(Y/N)")
+        if(use in ['Y','y']):
+            do_use = True
+        elif(use in ['N','n']):
+            do_use = False
+        else:
+            do_use = False
+    
+    return passwd
 
-Spare me your space age technobabble, Attila the Hun! We'll go deliver this crate like professionals, and then we'll go home. Aww, it's true. I've been hiding it for so long. Moving along… Please, Don-Bot… look into your hard drive, and open your mercy file!
+
+
+def passwordgen():
+    # store all characters in lists 
+    s1 = list(string.ascii_lowercase)
+    s2 = list(string.ascii_uppercase)
+    s3 = list(string.digits)
+    s4 = list(string.punctuation)
+    
+    
+    # Ask user about the number of characters
+    user_input = input("How many characters do you want in your password? ")
+    
+    
+    # check this input is it number? is it more than 8?
+    while True:
+    
+    	try:
+    
+    		characters_number = int(user_input)
+    
+    		if characters_number < 8:
+    
+    			print("Your number should be at least 8.")
+    
+    			user_input = input("Please, Enter your number again: ")
+    
+    		else:
+    
+    			break
+    
+    	except:
+    
+    		print("Please, Enter numbers only.")
+    
+    		user_input = input("How many characters do you want in your password? ")
+    
+    
+    # shuffle all lists
+    random.shuffle(s1)
+    random.shuffle(s2)
+    random.shuffle(s3)
+    random.shuffle(s4)
+    
+    
+    # calculate 30% & 20% of number of characters
+    part1 = round(characters_number * (30/100))
+    part2 = round(characters_number * (20/100))
+    
+    
+    # generation of the password (60% letters and 40% digits & punctuations)
+    result = []
+    
+    for x in range(part1):
+    
+    	result.append(s1[x])
+    	result.append(s2[x])
+    
+    for x in range(part2):
+    
+    	result.append(s3[x])
+    	result.append(s4[x])
+    
+    
+    # shuffle result
+    random.shuffle(result)
+    
+    
+    # join result
+    password = "".join(result)
+    #print("Strong Password: ", password)
+    return password
+
+
+
+if __name__=='__main__':
+    passw = retrievePass()
+    username = input("Username:")
+    where = input("Where? how you remember it?")
+    date = datetime.datetime.now().strftime('%Y-%m-%d')
+    DATA_DICT = {
+            "reg-date": date,
+            "username": username,
+            "passw": passw,
+            "where": where
+            }
+    write_to_sheet(DATA_DICT)
+
+```
+
+Sample output when running this script:
+
+![script output](/assets/script-output.png "Script  sample output")
