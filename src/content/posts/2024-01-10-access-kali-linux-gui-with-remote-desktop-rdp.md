@@ -26,4 +26,25 @@ systemctl start xrdp
 systemctl start xrdp-sesman 
 ```
 
-*Also,* Enable the
+*Also,* Enable the xrdp during power up:
+
+```
+
+systemctl enable xrdp
+
+systemctl enable xrdp-sesman
+```
+
+Reboot the Kali machine, and then try connecting from Remote Desktop in mac.
+
+Add new PC, write the IP, and username, password. Then, we can have remote connection to Kali machine on another Host, from other machine.
+
+
+
+![remote desktop setup](/assets/microsoftteams-image-1-.png "Remote desktop connetion")
+
+
+
+In this way, we can connect through Remote desktop to the Kali machine on another host laptop. 
+
+Thank you for reading.
