@@ -38,4 +38,41 @@ Here is how I converted the NTFS to exFAT:
    ```
 2. Install exfat on Ubuntu
 
-   To apply exfat filesystem to this partition, we need to install exfat command and utils on ubuntu.
+   To apply exfat filesystem to this partition, we need to install exfat command and utils on ubuntu. We need to install exfat-fuse and exfat-utils, However on Ubuntu 22 and higher, exfat-utils [is replaced by exfatprogs](https://askubuntu.com/a/1403901)
+
+   ```
+   # install exfat-fuse exfat-utils
+   # However, exfat-utils is now replaced by exfatprogs 
+   sudo apt-get install exfat-fuse exfatprogs
+
+   # unmount the partition 
+   # here, my targeted partion is /dev/sdb2 -> change according to yours
+   sudo umount /dev/sdb2
+
+   # After then, we need to format /dev/sdb2 with exfat
+
+   sudo mkfs.exfat /dev/sdb2
+
+   ## BUT WAIT, we want to give this partition a name
+   sudo mkfs.exfat -n Kailaba /dev/sdb2
+
+   # now to mount the partition, we need to create mount point
+   mkdir -p /media/<my-dir/Kailaba
+
+   sudo mount /dev/sdb2 /media/<my-di>/Kailaba
+
+   # run df -hT to see that our filesystem is now changed to exFat from NTFS
+   df -hT
+
+
+
+
+   ```
+
+
+
+In this way, we can format the particular partition to exfat file system, and enjoy read-write on all OSes. 
+
+
+
+Happy learning.
