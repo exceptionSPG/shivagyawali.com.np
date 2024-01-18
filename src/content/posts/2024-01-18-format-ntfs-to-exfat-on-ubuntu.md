@@ -16,3 +16,26 @@ Here is how I converted the NTFS to exFAT:
 1. ## Backup the current disk partition content
 
    I used rsync to backup content before proceeding with formatting.
+
+   ```
+   # dry run to see what runs
+   rsync -avPn Kailaba/ Shiva\ Gyawali/Kailaba-disk
+
+   # remove n and then run -> this will actual run
+   rsync -avP Kailaba/ Shiva\ Gyawali/Kailaba-disk
+
+   # Now once the files have been transfered to new directory, let's verify it again, and
+   # remove the source files
+   # dry run first always
+   rsync -avPn --remove-source-files Kailaba/ Shiva\ Gyawali/Kailaba-disk
+
+   # once you verified, true run
+   rsync -avP --remove-source-files Kailaba/ Shiva\ Gyawali/Kailaba-disk
+
+   ## NOTE: here, Kailaba/ is my source directory
+   ##             Shiva\ Gyawali/Kailaba-disk is my destination directory
+
+   ```
+2. Install exfat on Ubuntu
+
+   To apply exfat filesystem to this partition, we need to install exfat command and utils on ubuntu.
