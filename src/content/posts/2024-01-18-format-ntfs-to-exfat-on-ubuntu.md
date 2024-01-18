@@ -14,7 +14,7 @@ From some research, I came to know that I can use exFAT filesystem to format my 
 
 Here is how I converted the NTFS to exFAT:
 
-
+![before our journey begins](/assets/ntfs-kailaba.png "Before conversion:  /dev/sdb2 has ntfs filesystem")
 
 1. ## Backup the current disk partition content
 
@@ -39,7 +39,7 @@ Here is how I converted the NTFS to exFAT:
    ##             Shiva\ Gyawali/Kailaba-disk is my destination directory
 
    ```
-2. Install exfat on Ubuntu
+2. ## Install exfat on Ubuntu and format with it
 
    To apply exfat filesystem to this partition, we need to install exfat command and utils on ubuntu. We need to install exfat-fuse and exfat-utils, However on Ubuntu 22 and higher, exfat-utils [is replaced by exfatprogs](https://askubuntu.com/a/1403901)
 
@@ -75,6 +75,10 @@ Here is how I converted the NTFS to exFAT:
 ![mkfs.exfat output](/assets/exfat-format-kailaba.png "Output during extFAT formatting")
 
 
+
+### After our effort, here, we are with exFAT on /dev/sdb2:
+
+![after our changes](/assets/exfat-kailaba.png "After our changes: /dev/sdb2 has exfat filesystem")
 
 
 
