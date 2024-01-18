@@ -4,6 +4,7 @@ title: Format NTFS to exFAT on Ubuntu
 slug: format-ntfs-to-exfat-on-ubuntu
 date: 2024-01-18 11:41
 description: format disk, ntfs, exfat, ntfs-to-exfat,
+featuredImage: /assets/ntfs-to-extfat.png
 ---
 I have a hard disk, formatted with NTFS file system. 
 
@@ -12,6 +13,8 @@ When I need to use this hard-disk with Ubuntu, and MacOS, I got into the problem
 From some research, I came to know that I can use exFAT filesystem to format my one of the partition. exFAT is supported read-write on MacOS as well, and on Ubuntu or WIndows. Hence, this would solve my problem at hand.
 
 Here is how I converted the NTFS to exFAT:
+
+
 
 1. ## Backup the current disk partition content
 
@@ -68,6 +71,10 @@ Here is how I converted the NTFS to exFAT:
 
 
    ```
+
+![mkfs.exfat output](/assets/exfat-format-kailaba.png "Output during extFAT formatting")
+
+
 
 
 
