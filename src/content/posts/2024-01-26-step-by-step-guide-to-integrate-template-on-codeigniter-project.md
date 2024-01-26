@@ -265,7 +265,7 @@ Here is the TODO List:
       ```
    5. visit the **http://localhost/codeigniter-starter** you will see below:
 
-      ![Codeigniter header footer separated](/assets/create2.png "Boom: our welcome message with out template's header and footer.")
+      ![Codeigniter header footer separated](/assets/codeigniter-header-footer.png "Boom: our welcome message with out template's header and footer.")
 6. Now, we are bang. Till now, everything is great. However, still we have to organize our css, js, images, and fonts files. We have placed them directly on root folder. 
 
    1. Create assets directory in our root directory.
