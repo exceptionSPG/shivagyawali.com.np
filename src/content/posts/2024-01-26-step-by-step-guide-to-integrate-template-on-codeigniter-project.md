@@ -331,3 +331,8 @@ Here is the TODO List:
 
          Do this for all the href values in header and footer file.
       4. Now we resolved all the path for our resources. Now, re-visit and refresh our website. You will see everything as working fine.
+7. This way, we can integrate any theme/template in our codeigniter project. 
+
+
+
+I Hope this helps you. Thank you for reading. Happy learning :)
