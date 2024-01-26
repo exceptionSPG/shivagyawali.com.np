@@ -50,9 +50,9 @@ Download the [NOVA Project from here.](https://drive.google.com/file/d/1GKmlSR8N
 
 Here is the TODO List:
 
-1. Copy index.html from template to codeigniter-starter/application/views/index.html
-2. Copy css, js, images, and fonts directories from template to codeigniter-starter/ directory.
-3. Modify Controller code to load index.html
+1. Copy **index.html** from template to **codeigniter-starter/application/views/index.html**
+2. Copy **css, js, images, and fonts directories** from template to **codeigniter-starter/ directory**.
+3. Modify Controller code (**application/controllers/Welcome.php**) to load index.html
 
    ```
    .
@@ -62,18 +62,16 @@ Here is the TODO List:
      $this->load->view('index.html');
    }
    ```
-4. Now visit your site: http://localhost/codeigniter-starter. You will see your template being shown on instead of codeigniter welcome page.
+4. Now visit your site: **http://localhost/codeigniter-starter.** You will see your template being shown on instead of codeigniter welcome page.
 
    ![Codeigniter loading template](/assets/codeigniter-template-load.png "Boom: Our template is loaded under codeigniter")
-
-
 5. Now we have to refactor our code, so that we can separate our common part from the template.
 
    Since, our header and footer part is common to all the pages, we can paste them in separate file, which we can reuse in all of our pages.
 
-   1. Create include directory inside application/views/ on vscode 
-   2. Create files: header.php, and footer.php
-   3. On views/index.html:
+   1. Create include directory inside **application/views/ on vscode** 
+   2. Create files: **header.php, and footer.php**
+   3. Copy below code, and paste in respective file from **views/index.html:**
 
       **header.php**
 
@@ -255,22 +253,19 @@ Here is the TODO List:
       </body>
       </html>
       ```
-   4. Modify the Controller to load these header and footer, placing our welcome message page in-between header and footer:
+   4. Modify the Controller (**application/controllers/Welcome.php**) to load these header and footer, placing our welcome message page in-between header and footer:
 
       ```php
-
-
       	public function index()
       	{
       		$this->load->view('include/header.php');
       		$this->load->view('welcome_message');
       		$this->load->view('include/footer.php');
       	}
-
       ```
-   5. visit the http://localhost/codeigniter-starter you will see below:
+   5. visit the **http://localhost/codeigniter-starter** you will see below:
 
-      ![Codeigniter header footer separated](/assets/codeigniter-header-footer.png "Boom: our welcome message with out template's header and footer.")
+      ![Codeigniter header footer separated](/assets/create2.png "Boom: our welcome message with out template's header and footer.")
 6. Now, we are bang. Till now, everything is great. However, still we have to organize our css, js, images, and fonts files. We have placed them directly on root folder. 
 
    1. Create assets directory in our root directory.
@@ -333,7 +328,5 @@ Here is the TODO List:
          Do this for all the href values in header and footer file.
       4. Now we resolved all the path for our resources. Now, re-visit and refresh our website. You will see everything as working fine.
 7. This way, we can integrate any theme/template in our codeigniter project. 
-
-
 
 I Hope this helps you. Thank you for reading. Happy learning :)
