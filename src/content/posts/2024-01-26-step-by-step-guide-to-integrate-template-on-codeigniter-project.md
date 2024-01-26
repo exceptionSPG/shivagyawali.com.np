@@ -42,3 +42,28 @@ There are many files under these folders. However, mainly we will work in applic
 // TODO: include mvc implementation approach in codeigniter
 
 ## Download Template
+
+Download the [NOVA Project from here.](https://drive.google.com/file/d/1GKmlSR8NJkkSJVCm76xcuwBBTusKsohl/view?usp=sharing) Extract it and open it in vscode in new window.
+
+## Step-by-Step procedure:
+
+Here is the TODO List:
+
+1. Copy index.html from template to codeigniter-starter/application/views/index.html
+2. Copy css, js, images, and fonts directories from template to codeigniter-starter/ directory.
+3. Modify Controller code to load index.html
+
+   ```
+   .
+   .
+   .
+   public function index(){
+     $this->load->view('index.html');
+   }
+   ```
+4. Now visit your site: http://localhost/codeigniter-starter. You will see your template being shown on instead of codeigniter welcome page.
+
+   ![Codeigniter loading template](/assets/codeigniter-template-load.png "Boom: Our template is loaded under codeigniter")
+
+
+5.
