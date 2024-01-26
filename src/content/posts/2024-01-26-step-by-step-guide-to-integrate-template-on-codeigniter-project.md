@@ -270,4 +270,64 @@ Here is the TODO List:
    5. visit the http://localhost/codeigniter-starter you will see below:
 
       ![Codeigniter header footer separated](/assets/codeigniter-header-footer.png "Boom: our welcome message with out template's header and footer.")
-   6. Now, we are bang.
+6. Now, we are bang. Till now, everything is great. However, still we have to organize our css, js, images, and fonts files. We have placed them directly on root folder. 
+
+   1. Create assets directory in our root directory.
+   2. Move all css, js, images, and fonts folder into the assets folder. So our directory tree looks like:
+
+      ```
+      .
+      ├── application
+      │   ├── cache
+      │   ├── config
+      │   ├── controllers
+      │   ├── core
+      │   ├── helpers
+      │   ├── hooks
+      │   ├── language
+      │   ├── libraries
+      │   ├── logs
+      │   ├── models
+      │   ├── third_party
+      │   └── views
+      ├── assets
+      │   ├── css
+      │   ├── font
+      │   ├── images
+      │   └── js
+      ```
+
+      Note: use this command to see these tree structure:
+
+      ```
+      tree -L 2 -P "application assets"
+      ```
+   3. Now, we need to give appropriate path to our resources. So, First we need to configure some useful configurations:
+
+      1. Go to application/config/config.php and at line 26, set up your base-url. For this article, my base_url is: $config\['base_url'] = 'http://localhost/codeigniter-starter/';
+
+         ```
+         $config['base_url'] = 'http://localhost/codeigniter-starter/
+         ```
+      2. Go to application/config/autoload.php at line 92, we need to load [URL Helper library](https://codeigniter.com/userguide3/helpers/url_helper.html).
+
+         ```
+         $autoload['helper'] = array('url');
+         ```
+      3. Now, add below correct path to every anchor tag, href value:
+
+         ```
+         // We need to put these code just before current path:
+         <?php echo base_url(); ?>assets/
+
+         //Some examples
+
+             <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">
+             <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap-responsive.min.css">
+             <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/font-awesome.min.css">
+             <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/main.css">
+             <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/sl-slide.css">
+         ```
+
+         Do this for all the href values in header and footer file.
+      4. Now we resolved all the path for our resources. Now, re-visit and refresh our website. You will see everything as working fine.
