@@ -7,7 +7,7 @@ description: Codeigniter, kailaba, shiva gyawali, codeigniter data flow,
 ---
 - - -
 
-Read: Codeigniter Installation, and template integration.
+Read: [Codeigniter Installation, and template integration.](https://shivagyawali.com.np/step-by-step-guide-to-integrate-template-on-codeigniter-project)
 
 - - -
 
@@ -80,4 +80,15 @@ Step-by-step guides for sending data from views:
       Before moving to the views code, care the load view statement: **$this->load->view('blog_article', $data);** Here, We have sent our array name to the view **blog_article**.
 
 
-   2. On the views: blog_article.php, change code so that we will display the name we receive from the controller:
+   2. On the views: **blog_article.php**, change code so that we will display the name we receive from the controller:
+
+      ```php
+      <?php
+
+      echo "Hello, $nam";
+      ?>
+      ```
+
+      See, here we are directly accessing our Array's key-name to extract its value. Awesome.
+
+      Let's refresh the page, and we will see ***Hello, Gyawali*** as we have sent **Gyawali** as a data from controller.
