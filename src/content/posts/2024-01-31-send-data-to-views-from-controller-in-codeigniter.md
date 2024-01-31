@@ -15,7 +15,7 @@ In this article, we are going to see how we can send data from our Controllers t
 
 This is essential concept to learn, as this will be foundation for our complex projects. Simple understanding of MVC implementation in any type of languages or framework (laravel, django, etc.) will work in similar fashion. Thus, Our Controller will be the acting member to flow data from our databases (models) to our views, and vice-versa.
 
-Step-by-step guides for sending data from views:
+## Step-by-step guides for sending data from views:
 
 1. Create a view in **application/views/myview.php:**
 
@@ -92,3 +92,46 @@ Step-by-step guides for sending data from views:
       See, here we are directly accessing our Array's key-name to extract its value. Awesome.
 
       Let's refresh the page, and we will see ***Hello, Gyawali*** as we have sent **Gyawali** as a data from controller.
+
+      ![Hello, Gyawali](/assets/hello-gyawali.png "Bangg!! Data from controller is being displayed in view")
+
+      Bangg!! We can successfully send the data to our views. This is simple, yet, don't underestimate the power of a common concept ):-:(
+
+## Sending and Accessing multi-layer (nested array) Data:
+
+When our data has multiple array or say, array within array, the way we access to our data from views will slightly be changed. Let's delve into the code so that we can better understand the case.
+
+modify the sendDataToView() function to include nested array as shown:
+
+```php
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Welcome extends CI_Controller {
+	
+  public function sendDataToView(){
+		$name = "Shiva";
+		$surname = "Gyawali";
+		// Let's put these name and surname into data array
+		$data['nam'] = $name;
+		$data['thar'] = $surname;
+		// In this point, if we send the data array as below:
+		$this->load->view('blog_article',$data);
+
+		// we will access as shown below in views:
+		// echo "Hello, $nam $thar" which displays "Hello, Shiva Gyawali" 
+        // in the browser
+
+		// But this time, let's put this data array into 
+        // another array, say, tingtong with key parichay
+		$tingtong['parichay'] = $data;
+
+		// Now, our views will see sending data as 
+        // arrray of parichay with keys "nam" and "thar".
+		// Simply put, our recent (last-most) key of array
+        // will become accessible array with all the keys from nested array
+
+		$this->load->view('blog_article',$tingtong);
+	}
+}
+```
