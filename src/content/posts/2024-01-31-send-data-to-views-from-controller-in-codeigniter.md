@@ -48,3 +48,36 @@ Step-by-step guides for sending data from views:
 
    ![echo Hello shiva](/assets/echo-hello-shiva.png "Our current views in browser")
 4. Now, go to our Controller, and change the function **sendDataToView** and send some data to the view.
+
+   ```php
+   <?php
+   defined('BASEPATH') OR exit('No direct script access allowed');
+
+   class Welcome extends CI_Controller {
+
+     /*
+     Other functions and code...
+     
+     */
+     public function sendDataToView($name="Gyawali"){
+         $data['nam'] = $name;
+         $this->load->view('blog_article', $data);
+     }
+     
+   }
+   ```
+
+
+
+   1. Here, We added argument to our function **sendDataToView(),** We may also not use argument, and directly send some data from within the function, or take some argument and pass that argument to the views. Whatever the use-case is, we must pass data to the view.
+
+      One important thing to understand is, we can pass data in codeigniter as an **Associative Array.** Thus, We have to make one single Associative Array even though we have to send many more datas. ( We will shortly look into this in more depth.)
+
+      So, here I have created an array, **data**,and used key to store name variable in **nam. Now, we can access this value ($name) from our views using the key we hold/stored in our Associative array.** That means, on our views, we will have access to the key of our array as a variable. 
+
+      Still didn't get my point? Let's first see it. 
+
+      Before moving to the views code, care the load view statement: **$this->load->view('blog_article', $data);** Here, We have sent our array name to the view **blog_article**.
+
+
+   2. On the views: blog_article.php, change code so that we will display the name we receive from the controller:
