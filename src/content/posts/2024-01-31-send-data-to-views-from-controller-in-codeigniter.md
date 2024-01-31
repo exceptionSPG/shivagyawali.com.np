@@ -17,7 +17,7 @@ This is essential concept to learn, as this will be foundation for our complex p
 
 ## Step-by-step guides for sending data from views:
 
-1. Create a view in **application/views/myview.php:**
+1. Create a view in **application/views/blog_article.php:**
 
    ```php
    <?php
@@ -101,7 +101,7 @@ This is essential concept to learn, as this will be foundation for our complex p
 
 When our data has multiple array or say, array within array, the way we access to our data from views will slightly be changed. Let's delve into the code so that we can better understand the case.
 
-modify the sendDataToView() function to include nested array as shown:
+modify the **sendDataToView**() function to include nested array as shown:
 
 ```php
 <?php
@@ -116,7 +116,7 @@ class Welcome extends CI_Controller {
 		$data['nam'] = $name;
 		$data['thar'] = $surname;
 		// In this point, if we send the data array as below:
-		$this->load->view('blog_article',$data);
+		// $this->load->view('blog_article',$data);
 
 		// we will access as shown below in views:
 		// echo "Hello, $nam $thar" which displays "Hello, Shiva Gyawali" 
@@ -132,6 +132,37 @@ class Welcome extends CI_Controller {
         // will become accessible array with all the keys from nested array
 
 		$this->load->view('blog_article',$tingtong);
+        
 	}
 }
 ```
+
+In this, our **parichay** array with keys **nam**, and **thar** will be visible/accessible to the view.
+
+on blog_article.php views:
+
+```phtml
+<?php
+
+//echo "Hello, $nam";
+
+// directly using array in echo command may result in error
+// due to use of single and double quotes, so better to
+// extract in a variable, and use them in echo command.
+$from_controller_name = $parichay['nam'];
+$from_controller_thar = $parichay['thar'];
+echo "Hello, $from_controller_name $from_controller_thar";
+?>
+```
+
+This will surely output as we expected, "**Hello, Shiva Gyawali**", or anything we pass from our controller.
+
+![Hello, Shiva Gyawali](/assets/hello-shiva-gyawali.png "Accessing nested array element from views.")
+
+
+
+Dear Readers, this way we can send data from our controller to views. Bangg, thanks for reading.
+
+
+
+Happy Learning :)
