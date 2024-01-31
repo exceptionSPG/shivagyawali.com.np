@@ -5,8 +5,6 @@ slug: send-data-to-views-from-controller-in-codeigniter
 date: 2024-01-31 21:45
 description: Codeigniter, kailaba, shiva gyawali, codeigniter data flow,
 ---
-
-
 - - -
 
 Read: Codeigniter Installation, and template integration.
