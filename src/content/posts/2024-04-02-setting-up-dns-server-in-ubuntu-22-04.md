@@ -4,6 +4,7 @@ title: "Setting up DNS Server in Ubuntu 22.04 "
 slug: setting-up-dns-server-in-ubuntu
 date: 2024-04-02 19:50
 description: ubuntu server, dns server, ubuntu 22.04, ubuntu 24.04, shiva gyawali
+featuredImage: /assets/summary.png
 ---
 
 
