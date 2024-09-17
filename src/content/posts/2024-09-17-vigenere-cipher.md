@@ -118,6 +118,170 @@ Let’s use the following example to see the Vigenère Cipher in action.
 
 Here is sample implementation of Vigenere cipher in python:
 
+importing library:
+
+```
+# all library may not be used for Vigenere
+
+import unicodedata, string, re, random, math
+import numpy as np
+import matplotlib
+import matplotlib.pyplot as plt
+```
+
+Encryption algorithm:
+
+```
+# printing vigenere table manually
+def vig_table_manually():
+    v = []
+    for i in range (len(alpha)):
+        v.append(cshift(alpha,i))
+    return v
+
+
+def vig_encrypt_mathematically(charset,s,key):
+    "Encrypt the string 's' using Vigenère cipher and 'key' and table 'tbl'."
+    '''
+    STEPS:
+    1. making equal length of key and s
+    2. for every char in s, take corresponding char in key --> and then get the cross of these two characters
+        store them in a ciphertext list
+    3. print the ciphertext.
+    '''
+    # Add code to make s and key equal length
+    
+    #making all strings in uppercase
+    s = s.upper()
+    key = key.upper()
+    
+    # makging key of equal length as message
+    j = 0 #index for key
+    new_key = ''
+    for char in s:
+        if char.isalpha():
+            new_key += key[j % len(key)]
+            j += 1
+        else:
+            new_key += char
+    # print(new_key)
+    # print(s)
+    mCipher = ''
+
+    for pl, k in zip(s,new_key):
+        if pl.isalpha() and k.isalpha():
+            index_Si = charset.index(pl)
+            index_Ki = charset.index(k)
+            # print(index_Si, index_Ki)
+            index_Ci = (index_Si + index_Ki) % len(alpha)
+            # print(index_Ci)
+            char_Ci = alpha[index_Ci]
+            # print(char_Ci)
+        else:
+            char_Ci = pl
+        mCipher += char_Ci
+    # print(mCipher)
+    return mCipher
+
+# vig_encrypt_mathematically(alpha, "this is messae", "hello")
+# this is sample output:
+# HELL OH ELLOHE
+# THIS IS MESSAE
+
+# ALTD WZ QPDGHI
+
+
+
+```
+
+
+
+Decryption algorithm:
+
+```
+''' 
+decrypting
+'''
+def decrypt_vigenere_mathematical(charset, key, cipher):
+    #making all strings in uppercase
+    cipher = cipher.upper()
+    key = key.upper()
+    
+    # makging key of equal length as message
+    j = 0 #index for key
+    new_key = ''
+    for char in cipher:
+        if char.isalpha():
+            new_key += key[j % len(key)]
+            j += 1
+        else:
+            new_key += char
+    mPlain = ''
+
+    for cl, k in zip(cipher,new_key):
+        if cl.isalpha() and k.isalpha():
+            index_Ci = charset.index(cl)
+            index_Ki = charset.index(k)
+            # print(index_Si, index_Ki)
+            index_Pi = (index_Ci - index_Ki) % len(charset)
+            # print(index_Ci)
+            char_Pi = charset[index_Pi]
+            # print(char_Ci)
+        else:
+            char_Pi = cl
+        mPlain += char_Pi
+    # print(mPlain)
+    return mPlain
+
+# decrypt_vigenere_mathematical(alpha, "hello", "ALTD WZ QPDGHI")
+# sample output: THIS IS MESSAE
+
+```
+
+
+
+Utilizing both and creating vigenere algorithm:
+
+```
+''' 
+complete vigenere
+'''
+def vigenere_alg(charset,mode):
+
+    key = ''
+    plaintext = ''
+    cipher = ''
+    if mode == 'encrypt':
+        key = input("Enter your key:")
+        message = input("Enter your message to encrypt:")
+        ciphertext = vig_encrypt_mathematically(charset, message, key)
+        print(ciphertext)
+    elif mode == 'decrypt':
+        key = input("Enter your key:")
+        cMessage = input("Enter your ciphertext to decrypt:")
+        plaintext = decrypt_vigenere_mathematical(charset, key, cMessage)
+        print(plaintext)
+
+while True:
+    m = int(input("What to you want to do?\n1. encrypt\n2. decrypt\n3. exit"))
+    if m == 1:
+        mode = 'encrypt'
+    elif m == 2:
+        mode = 'decrypt'
+    elif m == 3:
+        break
+    else:
+        print("Please enter valid choice, 1 or 2 only!!")
+    alpha = string.ascii_uppercase
+    vigenere_alg(alpha, mode)
+    
+        
+```
+
+
+
+
+
 
 
 - - -
