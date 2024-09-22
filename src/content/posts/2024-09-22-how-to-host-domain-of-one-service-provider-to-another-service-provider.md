@@ -1,7 +1,7 @@
 ---
 template: blog-post
 title: How to host domain of one service provider to another service provider
-slug: /add-dns-record-of-one-service-providers-to-another-service-provider
+slug: /blog/add-dns-record-of-one-service-providers-to-another-service-provider
 date: 2024-09-22 18:20
 description: Hosting, website hosting, ionos hosting, bluehost hosting
 featuredImage: /assets/3_dns_record_details.png
