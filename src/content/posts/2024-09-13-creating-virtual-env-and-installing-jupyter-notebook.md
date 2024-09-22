@@ -1,7 +1,7 @@
 ---
 template: blog-post
 title: creating virtual env and installing jupyter notebook
-slug: /creating-virtual-env-and-installing-jupyter-notebook
+slug: /blog/creating-virtual-env-and-installing-jupyter-notebook
 date: 2024-09-12 08:21
 description: Python, jupyter notebook, python virtual env
 ---
