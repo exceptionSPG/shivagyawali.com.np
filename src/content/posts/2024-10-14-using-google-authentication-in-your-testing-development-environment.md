@@ -4,6 +4,7 @@ title: Using Google authentication in your testing/development environment
 slug: /blog/google-authentication-in-your-development-environment
 date: 2024-10-14 22:07
 description: Google authentication, Android development, failed gmail login,
+featuredImage: /assets/project-setting-page.png
 ---
 Ahh, Goshh!!
 
