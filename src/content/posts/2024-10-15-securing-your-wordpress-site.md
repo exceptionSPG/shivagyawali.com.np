@@ -1,7 +1,7 @@
 ---
 template: blog-post
 title: Securing your Wordpress site
-slug: checklist-for-securing-your-wordpress-site
+slug: /blog/checklist-for-securing-your-wordpress-site
 date: 2024-10-15 15:28
 description: wordpress site, security, securing wordpress,
 ---
