@@ -15,10 +15,32 @@ We have so many things are available to know with just little knowledge if a web
 2. Login page Directory access restriction
 3. wp-json API restriction
 
+   \
+   Add this code to your theme's functions.php: `./wp-content/themes/astra/functions.php`
 
+   ```php
+   add_filter( 'rest_authentication_errors', 'rudr_turn_off_rest_api_not_logged_in' );
 
-   Resources:
+   function rudr_turn_off_rest_api_not_logged_in( $errors ) {
 
+   	// if there is already an error, just return it
+   	if( is_wp_error( $errors ) ) {
+   		return $errors;
+   	}
+   	
+   	if( ! is_user_logged_in() ) {
+   		// return WP_Error object if user is not logged in
+   		return new WP_Error( 'no_rest_api_sorry', 'REST API not allowed', array( 'status' => 401 ) );
+   	}
+   	
+   	return $errors;
+   	
+   }
+   ```
+
+   Resources[](https://digwp.com/2018/08/secure-wp-rest-api/)
+
+   * <https://rudrastyh.com/wordpress/disable-rest-api.html>
    * <https://digwp.com/2018/08/secure-wp-rest-api/>
    * <https://developer.wordpress.org/rest-api/using-the-rest-api/authentication/>
 4. I will add more, as I explore myself
