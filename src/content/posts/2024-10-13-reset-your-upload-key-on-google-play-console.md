@@ -36,3 +36,11 @@ You need to follow below steps:
 
 
 Congratulations!! You successfully sent your request to reset your upload key. They will review your request and update your new upload key in 2-3 business days. Before validating or approval, we can't upload app bundles signed with this. Hence, wait till it is approved.
+
+
+
+I host my websites using babal host service. If you are looking for efficient hosting, I genuinely recommend based on my own experience:
+
+
+
+<a href="https://clients.babal.host/aff.php?aff=537&gocart=true"><img src="https://babal.host/img/affiliate/970x90LargeLeaderboard.png" width="970" height="90" border="0"></a>
