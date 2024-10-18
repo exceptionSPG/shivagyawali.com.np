@@ -43,4 +43,12 @@ We have so many things are available to know with just little knowledge if a web
    * <https://rudrastyh.com/wordpress/disable-rest-api.html>
    * <https://digwp.com/2018/08/secure-wp-rest-api/>
    * <https://developer.wordpress.org/rest-api/using-the-rest-api/authentication/>
-4. I will add more, as I explore myself
+4. I will add more, as I explore myself.
+
+
+
+I host my websites using babal host service. If you are looking for efficient hosting, I genuinely recommend based on my own experience:
+
+
+
+<a href="https://clients.babal.host/aff.php?aff=537&gocart=true"><img src="https://babal.host/img/affiliate/970x90LargeLeaderboard.png" width="970" height="90" border="0"></a>
