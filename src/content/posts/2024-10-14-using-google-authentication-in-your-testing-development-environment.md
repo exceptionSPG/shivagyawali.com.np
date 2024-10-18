@@ -10,8 +10,6 @@ Ahh, Goshh!!
 
 What would be more frustrating than your development version is not working as expected to that of public version. Recently, while I was working on an important update of our beloved [EL Computer](https://play.google.com/store/apps/details?id=com.kailaba.computer), I came to an issue of frustrating moment with failure on Google authentication login. It  took all my head figuring out what's going wrong here, because, it was/is working fine with current publicly available version, and even on [web version of EL Computer](https://elcomputerweb.kailaba.com/), and everything seems fine, perfectly fine. I re-downloaded the google-services.json file and uploaded to app directory, on my project. Nothing helped ;(
 
-
-
 Then, I came to realize that I need to add my signing key's SHA1 and SHA256 fingerprints to my firebase project to it to recognize my development app. I had lost my previous upload key, hence, I had obviously new upload key, thus need to add it's SHA1 and SHA256 fingerprints too. Ahh, if you also have lost your upload key, you can request for reset as I described in this article here.
 
 Aaahhh, it's the feeling that you get when you figure out something and immediately you have a gut feelings, an intuitive faith burning inside you that "Yes, it will surely work." I got the same energy, wow, I was super excited to follow the procedures, as follow:
@@ -59,10 +57,14 @@ Aaahhh, it's the feeling that you get when you figure out something and immediat
       ![Download google-services.json](/assets/download-google-json.png "Download google-services.json")
    4. Copy this just downloaded file to your project/android/app/ folder.
 
-
-
 Bangg!! Just run your app in debug or release mode, and you can now be successfully login with your gmail authentication. And, it worked as our gut feeling already said it. Wow, just wow!!
 
-
-
 I hope this helped you :) See you in next article.. Great learning....
+
+
+
+I host my websites using babal host service. If you are looking for efficient hosting, I genuinely recommend based on my own experience:
+
+
+
+<a href="https://clients.babal.host/aff.php?aff=537&gocart=true"><img src="https://babal.host/img/affiliate/970x90LargeLeaderboard.png" width="970" height="90" border="0"></a>
