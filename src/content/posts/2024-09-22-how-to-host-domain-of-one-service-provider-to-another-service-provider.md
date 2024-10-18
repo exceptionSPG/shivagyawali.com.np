@@ -59,3 +59,11 @@ If you want to connect your cloudflare website to your github website, watch bel
 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/LcQZs6ii2Zk?si=upIzyfn0idyN-_mO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+
+I host my websites using babal host service. If you are looking for efficient hosting, I genuinely recommend based on my own experience:
+
+
+
+<a href="https://clients.babal.host/aff.php?aff=537&gocart=true"><img src="https://babal.host/img/affiliate/970x90LargeLeaderboard.png" width="970" height="90" border="0"></a>
