@@ -84,6 +84,18 @@ I enjoy teaching, writing, and sharing. These are the place where I share:
 
 
 - - -
+## Reach Out to Me
+
+Feel free to connect with me through any of the following platforms:
+
+- **GitHub**: [exceptionSPG](https://github.com/exceptionSPG)  
+- **Stack Overflow**: [Your Stack Overflow Profile](https://stackoverflow.com/users/youruserid)  
+- **YouTube**: [Shiva Gyawali YT](https://youtube.com/@ShivaGyawali)  
+- **Personal Blog**: [My Blog](https://shivagyawali.com.np)  
+- **Kailaba**: [Kailaba](https://kailaba.com)  
+- **EL Computer**: [EL Computer](https://elcomputerweb.com)  
+- **Email**: [contact@shivagyawali.com.np](mailto:contact@shivagyawali.com.np)  
+
 
 Thank you for visiting my page! Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/shiva-prasad-gyawali-440745159/) or explore my portfolio.
 
