@@ -41,8 +41,7 @@ Welcome! I’m Shiva Gyawali, a Cybersecurity Enthusiast with a passion for syst
   - Troubleshot and resolved customer issues, primarily on Linux OS and Windows systems.
   - Diagnosed and fixed network-related issues and identified product bugs, escalating them to the engineering team.
   - Provided remote support through Zoom and AnyDesk to assist clients in real-time.
-  - Automated tasks and improved processes using Bash and Python
-scripting.
+  - Automated tasks and improved processes using Bash and Python scripting.
   - Collaborated with customers to ensure system optimization and seamless functionality.
 
 
