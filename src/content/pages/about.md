@@ -5,7 +5,7 @@ title: About me
 ---
 Welcome! I’m Shiva Gyawali, a Cybersecurity Enthusiast with a passion for system security, Web/Mobile application security, Web vulnerability, and cryptography.
 
-<img src="/assets/12393205962.png" alt="Your Name" style="float: right; margin-left: 15px; width: 150px; border-radius: 8px;"/>
+<img src="/assets/12393205962.png" alt="Your Name" style="float: right; margin-left: 15px; width: 250px; border-radius: 8px;"/>
 
 - - -
 
