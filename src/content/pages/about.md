@@ -87,7 +87,7 @@ I enjoy teaching, writing, and sharing. These are the place where I share:
 Feel free to connect with me through any of the following platforms:
 
 - **GitHub**: [exceptionSPG](https://github.com/exceptionSPG)  
-- **Stack Overflow**: [Your Stack Overflow Profile](https://stackoverflow.com/users/youruserid)  
+- **Stack Overflow**: [Stack Overflow Profile](https://stackoverflow.com/users/14540274/shiva-gyawali)  
 - **YouTube**: [Shiva Gyawali YT](https://youtube.com/@ShivaGyawali)  
 - **Personal Blog**: [My Blog](https://shivagyawali.com.np)  
 - **Kailaba**: [Kailaba](https://kailaba.com)  
