@@ -53,8 +53,7 @@ seamless functionality.
 
   - Deployed applications and services, ensuring smooth operation and minimal downtime.
   - Performed server health checks and vulnerability assessments to ensure system security and performance.
-  - Managed and optimized CI/CD pipelines for automated, reliable
-deployments.
+  - Managed and optimized CI/CD pipelines for automated, reliable deployments.
   - Led server migrations and coordinated with teams to ensure seamless transitions.
   - Created and maintained technical documentation for infrastructure, deployment processes, and troubleshooting guides.
   - Fostered communication between development, operations, and security teams to drive project success.
@@ -69,10 +68,9 @@ I like to explore and try new technology, technical things, and do hands-on myse
 
 - **[EL Computer](https://play.google.com/store/apps/details?id=com.kailaba.computer)**  
   I have had a dream to have my own app published on Play Store, and to see it installed on some other user's phone. EL Computer accomplished that dream through me.
- - **[EL Computer Web](https://elcomputerweb.kailaba.com/)** <br>
-  [@Nabin](https://github.com/IBA4) daily complained me to publish it in app store. I was poor to pay 100$ per year for per app, so I deployed it's web version so that Nabin can use it. No doubt, you can use it too ;) 
+
 - **[EL Computer Web](https://elcomputerweb.kailaba.com/)**  
-  I [@Nabin](https://github.com/IBA4) daily complained me to publish it in app store. I was poor to pay 100$ per year for per app, so I deployed it's web version so that Nabin can use it. No doubt, you can use it too ;).
+  [@Nabin](https://github.com/IBA4) daily complained me to publish it in app store. I was poor to pay 100$ per year for per app, so I deployed it's web version so that Nabin can use it. No doubt, you can use it too ;).
 
 - - -
 
