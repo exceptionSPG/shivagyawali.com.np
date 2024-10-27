@@ -65,12 +65,12 @@ deployments.
 I like to explore and try new technology, technical things, and do hands-on myself. For this purpose, I have my own playground - kailaba. Though, initially kailaba (काईलाबा) is started as [YouTube Channel](https://www.youtube.com/@official.kailaba) to share book summary in Nepali language, it has now grown to website, and is my playground to test anything I want ;)
 
 - **<a href="https://kailaba.com" target="_blank" rel="noopener noreferrer">Kailaba</a>**  
-  A web platform designed to [briefly describe what the platform does, e.g., connect users with local services, facilitate online bookings, etc.]. My role involved [mention your contributions, such as development, design, or specific technologies used].
+  I write articles, manage overall website from SEO to development.
 
 - **[EL Computer](https://play.google.com/store/apps/details?id=com.kailaba.computer)**  
-  An Android application aimed at [describe the purpose of the app, e.g., helping users manage their computer systems, providing tutorials, etc.]. I was responsible for [mention specific tasks or technologies you worked on, like UI design, backend integration, etc.].
+  I have had a dream to have my own app published on Play Store, and to see it installed on some other user's phone. EL Computer accomplished that dream through me.
  - **[EL Computer Web](https://elcomputerweb.kailaba.com/)** <br>
-  Web version of EL Computer, tailored to access all features that you can get in the app. 
+  [@Nabin](https://github.com/IBA4) daily complained me to publish it in app store. I was poor to pay 100$ per year for per app, so I deployed it's web version so that Nabin can use it. No doubt, you can use it too ;) 
 
 
 - - -
@@ -78,12 +78,13 @@ I like to explore and try new technology, technical things, and do hands-on myse
 ## Outside of Work
 I enjoy teaching, writing, and sharing. These are the place where I share:
   - **<a href="https://www.youtube.com/@ShivaGyawali" target="_blank" rel="noopener noreferrer">Shiva Gyawali YT</a>**  
-  A web platform designed to [briefly describe what the platform does, e.g., connect users with local services, facilitate online bookings, etc.]. My role involved [mention your contributions, such as development, design, or specific technologies used].
+  I share useful videos for students, from (hard engineering) course content to some travel vlogs, some useful information and scholarship tips, and many more. Check it once.
 
 - **[काईलाबा YT](https://www.youtube.com/@official.kailaba)**  
-  An Android application aimed at [describe the purpose of the app, e.g., helping users manage their computer systems, providing tutorials, etc.]. I was responsible for [mention specific tasks or technologies you worked on, like UI design, backend integration, etc.].
+  I read books (or, books read me?). And, I share it to the Nepali audiences in Nepali language.
 
 
 - - -
 
 Thank you for visiting my page! Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/shiva-prasad-gyawali-440745159/) or explore my portfolio.
+
