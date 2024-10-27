@@ -71,7 +71,8 @@ I like to explore and try new technology, technical things, and do hands-on myse
   I have had a dream to have my own app published on Play Store, and to see it installed on some other user's phone. EL Computer accomplished that dream through me.
  - **[EL Computer Web](https://elcomputerweb.kailaba.com/)** <br>
   [@Nabin](https://github.com/IBA4) daily complained me to publish it in app store. I was poor to pay 100$ per year for per app, so I deployed it's web version so that Nabin can use it. No doubt, you can use it too ;) 
-
+- **[EL Computer Web](https://elcomputerweb.kailaba.com/)**  
+  I [@Nabin](https://github.com/IBA4) daily complained me to publish it in app store. I was poor to pay 100$ per year for per app, so I deployed it's web version so that Nabin can use it. No doubt, you can use it too ;).
 
 - - -
 
