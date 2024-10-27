@@ -35,7 +35,7 @@ Welcome! I’m Shiva Gyawali, a Cybersecurity Enthusiast with a passion for syst
 ## Work Experience
 
 - **Solution Engineer**  
-  Logpoint  
+  [Logpoint](https://www.logpoint.com/en/)  
   *Jul 2023 – Aug 2024*
 
   - Troubleshot and resolved customer issues, primarily on Linux OS and Windows systems.
@@ -46,7 +46,7 @@ Welcome! I’m Shiva Gyawali, a Cybersecurity Enthusiast with a passion for syst
 
 
 - **DevOps Engineer**  
-  Geniussystems Pvt. Ltd.  
+  [Geniussystems Pvt. Ltd.](https://geniussystems.com.np/)  
   *Jan 2023 – Jun 2023*
 
   - Deployed applications and services, ensuring smooth operation and minimal downtime.
