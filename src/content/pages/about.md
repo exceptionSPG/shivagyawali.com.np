@@ -43,8 +43,7 @@ Welcome! I’m Shiva Gyawali, a Cybersecurity Enthusiast with a passion for syst
   - Provided remote support through Zoom and AnyDesk to assist clients in real-time.
   - Automated tasks and improved processes using Bash and Python
 scripting.
-  - Collaborated with customers to ensure system optimization and
-seamless functionality.
+  - Collaborated with customers to ensure system optimization and seamless functionality.
 
 
 - **DevOps Engineer**  
