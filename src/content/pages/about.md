@@ -76,9 +76,11 @@ I like to explore and try new technology, technical things, and do hands-on myse
 I enjoy teaching, writing, and sharing. These are the place where I share:
   - **<a href="https://www.youtube.com/@ShivaGyawali" target="_blank" rel="noopener noreferrer">Shiva Gyawali YT</a>**  
   I share useful videos for students, from (hard engineering) course content to some travel vlogs, some useful information and scholarship tips, and many more. Check it once.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0KGCCOd7VMM?si=VUb68xCYq1brmtD0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 - **[काईलाबा YT](https://www.youtube.com/@official.kailaba)**  
   I read books (or, books read me?). And, I share it to the Nepali audiences in Nepali language.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qL6ALRcwc9o?si=MpB4UKnpV6zzlFvk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
 - - -
