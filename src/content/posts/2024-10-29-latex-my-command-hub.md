@@ -4,6 +4,7 @@ title: LaTex - my command Hub
 slug: /blog/latex-compilation
 date: 2024-10-29 10:03
 description: Shiva Gyawali, LaTeX, writing research, research paper
+featuredImage: https://upload.wikimedia.org/wikipedia/commons/e/e0/TeXmaker_New_Logo.svg
 ---
 In this article, I will gather up all useful LaTeX command for ease access to me. 
 
