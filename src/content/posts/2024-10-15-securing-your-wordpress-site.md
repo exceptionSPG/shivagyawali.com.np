@@ -7,8 +7,30 @@ description: wordpress site, security, securing wordpress,
 ---
 We have so many things are available to know with just little knowledge if a website is wordpress. Thus, in this article, I am listing out some ways to secure our Wordpress Site.
 
-1. Login page Error message
+1. Login page Error message\
+   Go to your theme's functions.php on ``your-site-path/wp-content/themes/activated-theme/functions.php``, then just add these code on this file:
 
+   ```
+   add_filter('login_errors','login_error_message');
+
+   function login_error_message($error){
+       //check if that's the error you are looking for
+       $pos = strpos($error, 'incorrect');
+       if (is_int($pos)) {
+           //its the right error so you can overwrite it
+           $error = "Wrong information";
+       }
+       return $error;
+   }
+   ```
+
+   After saving this change, our login error information will be "Wrong information" as:
+
+   ![](/assets/wp-login-error-message.png)
+
+   \
+   \
+   \
    Resources:
 
    * <https://wordpress.stackexchange.com/a/25106>
@@ -45,10 +67,6 @@ We have so many things are available to know with just little knowledge if a web
    * <https://developer.wordpress.org/rest-api/using-the-rest-api/authentication/>
 4. I will add more, as I explore myself.
 
-
-
 I host my websites using babal host service. If you are looking for efficient hosting, I genuinely recommend based on my own experience:
-
-
 
 <a href="https://clients.babal.host/aff.php?aff=537&gocart=true"><img src="https://babal.host/img/affiliate/970x90LargeLeaderboard.png" width="970" height="90" border="0"></a>
