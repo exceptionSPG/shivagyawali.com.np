@@ -8,7 +8,7 @@ description: wordpress site, security, securing wordpress,
 We have so many things are available to know with just little knowledge if a website is wordpress. Thus, in this article, I am listing out some ways to secure our Wordpress Site.
 
 1. Login page Error message\
-   Go to your theme's functions.php on ``your-site-path/wp-content/themes/activated-theme/functions.php``, then just add these code on this file:
+   Go to your theme's functions.php on `your-site-path/wp-content/themes/activated-theme/functions.php`, then just add these code on this file:
 
    ```
    add_filter('login_errors','login_error_message');
@@ -26,7 +26,7 @@ We have so many things are available to know with just little knowledge if a web
 
    After saving this change, our login error information will be "Wrong information" as:
 
-   ![](/assets/wp-login-error-message.png)
+   ![](/assets/wp-login-error-message.png "Showing our custom login error message.")
 
    \
    \
@@ -60,6 +60,12 @@ We have so many things are available to know with just little knowledge if a web
    }
    ```
 
+   ![](/assets/wp-json-reject.png "Restricing Rest api access.")
+
+   \
+   If you want to visit my client's site: <https://saiavenueconstruction.co.uk>
+
+   \
    Resources[](https://digwp.com/2018/08/secure-wp-rest-api/)
 
    * <https://rudrastyh.com/wordpress/disable-rest-api.html>
