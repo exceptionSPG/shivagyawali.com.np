@@ -70,7 +70,7 @@ I like to explore and try new technology, technical things, and do hands-on myse
 
 ## Outside of Work
 
-I enjoy teaching, writing, and sharing. These are the place where I share:
+I love explaining things to others. I enjoy teaching, writing, and sharing. These are the place where I share:
 
 * **<a href="https://www.youtube.com/@ShivaGyawali" target="_blank" rel="noopener noreferrer">Shiva Gyawali YT</a>**\
     I share useful videos for students, from (hard engineering) course content to some travel vlogs, some useful information and scholarship tips, and many more. Check it once.
@@ -93,7 +93,5 @@ Feel free to connect with me through any of the following platforms:
 
 <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="shiva-prasad-gyawali-440745159" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://fr.linkedin.com/in/shiva-prasad-gyawali-440745159?trk=profile-badge">Shiva Prasad Gyawali</a></div>
               
-
-
 
 Thank you for visiting my page! Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/shiva-prasad-gyawali-440745159/) or explore my portfolio.
