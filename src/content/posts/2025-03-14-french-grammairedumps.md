@@ -7,14 +7,12 @@ description: French verbes, grammaire, A1, A2, french language learning, languga
 ---
 Bienvenue au nouvelle l'article. Ici, je veux partager grammaire que j'ai appris. 
 
-
-
 ## Grammaires les francaise
 
-1. Conjugaison
-2. Passe Compose
-3. so
+1. L'Articles
+2. Singulier / Pluriel
+3. Conjugaison
+4. Passe Compose
+5. so
 
-
-
-### 1. Conjugaison
+### 1. L'articles
