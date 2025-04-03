@@ -4,7 +4,7 @@ title: "create and share mac folder via SMB share "
 slug: /blog/create-and-share-mac-folder-via-network
 date: 2025-04-03 09:48
 description: "mac share, mac folder share, macutil, SMB share "
-featuredImage: ""
+featuredImage: /assets/file-sharing.png
 ---
 In some cases we need to mount or share our mac folder with other server/devices in the network. Let's explore and setup our mac to share it's folder via the network mount.
 
