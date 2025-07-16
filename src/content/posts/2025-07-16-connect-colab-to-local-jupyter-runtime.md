@@ -22,18 +22,18 @@ Start jupyter notebook by following command:
 
 This will set our token as 'mytoken'.
 
-![](/assets/server-started-with-token.png)
+![](/assets/server-started-with-token.png "Token is set in started server link.")
 
 Now, head over to colab, then click on Connect to Local runtime:
 
-![](/assets/connect-to-local-colab1.png)
+![](/assets/connect-to-local-colab1.png "Connect to a local runtime.")
 
 Then, enter the link as shown.
 
-![](/assets/connect-to-loca-colab1.png)
+![](/assets/connect-to-loca-colab1.png "Local server link with token")
 
 
 
 If you try to connect without a token, or a wrong token, then it won't connect and shows following error:
 
-![](/assets/terminal-blocking-output.png)
+![](/assets/terminal-blocking-output.png "Error: can't connect to local runtime.")
