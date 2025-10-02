@@ -5,9 +5,9 @@ slug: /blog/french/verb-dumps
 date: 2025-03-14 10:57
 description: "french learning, language learning, A1, A2, French Learning, Bonjour, "
 ---
+## I started working on separate space for learning french. You can check it here: [french.kailaba.com](https://french.kailaba.com)
+
 Bonjour tous le monde!! Ici, je veux garder tout le verb j'apprend.
-
-
 
 ## A
 
@@ -16,8 +16,6 @@ Bonjour tous le monde!! Ici, je veux garder tout le verb j'apprend.
 3. adorer
 4.
 5. aider
-
-
 
 ## B
 
