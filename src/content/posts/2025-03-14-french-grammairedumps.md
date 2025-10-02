@@ -7,6 +7,8 @@ description: French verbes, grammaire, A1, A2, french language learning, languga
 ---
 Bienvenue au nouvelle l'article. Ici, je veux partager grammaire que j'ai appris. 
 
+## I started working on separate space for learning french. You can check it here: [french.kailaba.com](https://french.kailaba.com)
+
 ## Grammaires les francaise
 
 1. L'Articles
