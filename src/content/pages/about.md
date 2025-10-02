@@ -95,3 +95,38 @@ Feel free to connect with me through any of the following platforms:
               
 
 Thank you for visiting my page! Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/shiva-prasad-gyawali-440745159/) or explore my portfolio.
+
+
+
+
+
+- - -
+
+## Learning French
+
+I am currently learning french through books. Here are the list of books I am reading.
+
+Currently Reading:
+
+* **Oser écrire** - par Madeleine Chapsal (strategy: daily 14 min read, 16 min translation analysis)
+* **Les fantomes de lockerbie** - par Gerard de Villiers (strategy: Bed time read until I fall asleep ;) )
+* **Annabelle** - par Lina Bengtsdotter (strategy: companion for long travel on train)
+* ***1*984** (french version) - par George Orwell (strategy: companion for short-travel on train/bus)
+
+On queue:
+
+* **Cesar Imperator** - par Max Gallo
+* **Le beau danube rouge** - Gerard de Villiers
+* **L'homme de vinci** - par Laurent Bettoni
+* ***L'Homme qui rit*** - par Victor Hugo
+*
+
+   
+
+Finished reading:
+
+* **Il faut du temps pour rester jeune** - par Michel Drucker. (read twice). Comment j'ai trouvé? [Voir ici.](https://youtu.be/EV1T74BgZlY?si=PFXKq9mWFtlwNXn7)
+* **L'étranger** - par Albert Camus 
+*
+
+If you want to learn french with me,[ allons y!! ici.](https://french.kailaba.com)
