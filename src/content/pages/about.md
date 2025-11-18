@@ -11,9 +11,13 @@ Welcome! I’m Shiva Gyawali, a Cybersecurity Enthusiast with a passion for syst
 
 ## Education
 
+* **Master's in Software Security (Erasmus Mundus - Cyberus)**\
+  *University of Luxembourg, Luxembourg*\
+  *Currently pursuing (2025-2026)*
 * **Master’s in Cybersecurity (Erasmus Mundus - Cyberus)** <br>
     Université Bretagne Sud, Lorient, France\
-  *Currently pursuing (2024 - Present)*
+  *grade: 15.2/20* \
+  *Completed: 2025*
 * **Bachelor’s in Computer Engineering**\
   Nepal Engineering College, Bhaktapur, Nepal <br>
   (affiliated to Pokhara University)\
@@ -96,10 +100,6 @@ Feel free to connect with me through any of the following platforms:
 
 Thank you for visiting my page! Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/shiva-prasad-gyawali-440745159/) or explore my portfolio.
 
-
-
-
-
 - - -
 
 ## Learning French
@@ -120,8 +120,6 @@ On queue:
 * **L'homme de vinci** - par Laurent Bettoni
 * ***L'Homme qui rit*** - par Victor Hugo
 *
-
-   
 
 Finished reading:
 
