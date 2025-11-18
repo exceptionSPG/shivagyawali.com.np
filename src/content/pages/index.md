@@ -8,4 +8,4 @@ cta:
   ctaText: Know more
   ctaLink: /about
 ---
-An experience experiencing the existence. A keen learner, passionately driven, enthuasiastic.
+An experience experiencing the existence. A keen learner, passionately driven, curious.
