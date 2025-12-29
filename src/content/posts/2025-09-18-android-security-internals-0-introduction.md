@@ -4,6 +4,7 @@ title: "Android Security Internals #0: Introduction"
 slug: /blog/android-security-internals-0-introduction
 date: 2025-09-18 11:19
 description: "android security, android framework, "
+featuredImage: /assets/book-cover.png
 ---
 I am following the book "Android Security Internals" to understand the depth of android security and it's security model. I will write chapter-wise summary/understanding here for my future reference and to share with the community.
 
