@@ -30,6 +30,20 @@ In this article, we will see:
   * System Updates
   * Verified Boot
 
-
-
 Below diagram shows high-level architecture of Android ecosystem:
+
+![Android Architecture](/assets/1_architecture.png "Figure: Android ecosystem architecture")
+
+
+
+1. Linux Kernel
+
+   Android is built on top of the Linux kernel. It is supported by **Android Mainlining Project**.  Android kernel is slightly different from a “regular” Linux kernel due to the addition of a set of new features to support Android. These added new features are collectively known as **Androidisms**. Some of the main Androidisms are the low memory killer, wakelocks (integrated as part of wakeup sources support in the mainline Linux kernel), anonymous shared memory (ashmem), alarms, paranoid networking, and Binder. 
+
+
+2. Native Userspaces (Init, Native Daemons, Native Libraries, and HAL)
+
+   On top of Linux kernel are the init binary (the first process started, that starts all other processes), native daemons and native libraries. It also consists of Hardware Abstraction Layer (HAL) that Mediates between hardware drivers and higher-level APIs. Native Libraries are written in C/C++ and provides functionalities like WebKit, SQLite. 
+
+
+3. Dalvik VM
