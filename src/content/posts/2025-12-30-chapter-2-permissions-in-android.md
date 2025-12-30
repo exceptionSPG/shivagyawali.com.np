@@ -56,4 +56,28 @@ Here, as described in Chapter 1 article, this app is provided with 3003 supplime
 
 
 
+![](/assets/3_packages-list-showing-gids.png)
+
+
+
+
+
 If we also add other permission, it will have other supplimentary GIDs.
+
+![](/assets/4_bluetooth-internet-gids.png)
+
+
+
+We need to have root access to read content of packages.list file, else we will get permission denied error.
+
+![](/assets/2_permission_denied_packages-list.png)
+
+
+
+This is in our AndroidManifest.xml:
+
+![](/assets/5_our-permissions.png)
+
+
+
+This file contains the GID and corresponding permisison mappings: [android_filesystem_config.h](https://android.googlesource.com/platform/system/core/+/master/libcutils/include/private/android_filesystem_config.h) or [here](https://github.com/pfalcon/android-platform-headers/blob/master/android-4.2_r1/system/core/include/private/android_filesystem_config.h).
