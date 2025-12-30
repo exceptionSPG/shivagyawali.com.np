@@ -5,6 +5,7 @@ slug: /blog/chapter-1-android-security-model
 date: 2025-12-29 14:51
 description: android security, android security internals, android security
   model, shiva gyawali, erasmus mundus, erasmus mundus motivation letter
+featuredImage: /assets/1_architecture.png
 ---
 In this article, we will see:
 
