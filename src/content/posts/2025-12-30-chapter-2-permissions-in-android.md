@@ -34,3 +34,7 @@ We will cover:
   * Static Provider permission
   * Dynamic provider permission
 * Pending Intents
+
+
+
+Permission Assignment
