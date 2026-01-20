@@ -1,6 +1,6 @@
 ---
 template: blog-post
-title: Nagios + Prometheus + Grafana for monitoring and visulisation
+title: Nagios Monitoring - setting up, adding new hosts, and adding new services
 slug: /blog/nagios-prometheus-grafana-for-monitoring-and-visualisation
 date: 2026-01-20 09:53
 description: devops, devsecops, nagios, prometheus, grafana,
