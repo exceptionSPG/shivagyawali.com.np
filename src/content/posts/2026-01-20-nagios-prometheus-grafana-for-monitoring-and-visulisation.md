@@ -67,6 +67,10 @@ These are the current hosts shown on my setup:
 
 ![](/assets/3-ui-hosts.png "Nagios Hosts")
 
+
+
+### Adding new hosts
+
 Now, we will see how to add new hosts to our Nagios Monitoring:
 
 To add new host, let's add a host element in our **objects/hosts.cfg** file:
@@ -113,6 +117,51 @@ you can exec into the container, to see if the config file (/opt/nagios/etc/obje
 \`/opt/nagios/bin/nagios -v /opt/nagios/etc/nagios.cfg\` command.
 
 If everything is well, our newly added hosts will be shown:
+
+![](/assets/5-new-host-added.png "New host added to Nagios")
+
+Voila, you see!!!
+
+
+
+### adding services to monitor
+
+Now, next, we can add few services to monitor, for example, whether port 80 is running or not, or many more. 
+
+These are our current services on my environment:
+
+![](/assets/6-current-services.png "Monitored Services for different hosts in Nagios")
+
+Since, we are not monitoring any services yet on our newly added host, it doesn't show our host. Let's add some services to monitor on our new host.
+
+Here, this \`ubuntu-server\` is my virtual machine, running Ubuntu 22.04. Thus, let's add a service to check for port 80. 
+
+We start this by adding a service definition in our objects/services.cfg file:
+
+```
+# Adding this service to the existing services.cfg
+
+define service {
+	use			generic-service
+	host_name		ubuntu-server
+	service_description	monitoring of port 80
+	check_command		check_tcp!80
+}
+```
+
+
+
+Here, we define a service to monitoring for port 80. We specified our host on which we want to monitor this service, which is \`ubuntu-server\`. 
+
+Here, the command check_tcp!80 is defined in the objects/commands.cfg file. Thus, we can add our own custom commands as well, which we could monitor by simply calling it in this file. 
+
+Let's save the file, restart the container and verify if our config is synced. 
+
+If everything goes well, voila, you should see:
+
+
+
+
 
 
 
