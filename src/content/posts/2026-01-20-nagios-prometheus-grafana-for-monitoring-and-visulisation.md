@@ -63,7 +63,56 @@ Now, visit <http://localhost:8081>, and you shall see the nagios UI:
 
 If you check the hosts, it will show you localhost (which is added by default). 
 
+These are the current hosts shown on my setup:
+
+![](/assets/3-ui-hosts.png "Nagios Hosts")
+
 Now, we will see how to add new hosts to our Nagios Monitoring:
+
+To add new host, let's add a host element in our **objects/hosts.cfg** file:
+
+```
+define host {
+        use             template-host
+        host_name       kailaba
+        alias           kailaba
+        address         192.250.235.20
+}
+
+define host {
+        use             template-host
+        host_name       ubuntu-server
+        alias           ubuntu
+        address         192.168.64.6
+}
+
+define host{
+    host_name       prometheus-node
+    address         127.0.0.1
+    use             template-host
+}
+
+
+define hostgroup {
+        hostgroup_name  web-server
+        alias           web-server group
+        members         kailaba
+}
+```
+
+
+
+Now, save the file, container up again to take new file, then restart the container to start with new configuration file.
+
+\`docker-compose up -d\` 
+
+\`docker restart monitoring_nagios\`
+
+you can exec into the container, to see if the config file (/opt/nagios/etc/objects/hosts.cfg) has updated or not. You can also verify the config file, with:
+
+\`/opt/nagios/bin/nagios -v /opt/nagios/etc/nagios.cfg\` command.
+
+If everything is well, our newly added hosts will be shown:
 
 
 
