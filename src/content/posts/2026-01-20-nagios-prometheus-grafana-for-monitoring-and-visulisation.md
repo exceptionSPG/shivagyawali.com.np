@@ -1,7 +1,7 @@
 ---
 template: blog-post
 title: Nagios Monitoring - setting up, adding new hosts, and adding new services
-slug: /blog/nagios-prometheus-grafana-for-monitoring-and-visualisation
+slug: /blog/nagios-monitoring-setting-up-adding-new-hosts-add-new-service
 date: 2026-01-20 09:53
 description: devops, devsecops, nagios, prometheus, grafana,
 featuredImage: /assets/1-nagios-ui.png
