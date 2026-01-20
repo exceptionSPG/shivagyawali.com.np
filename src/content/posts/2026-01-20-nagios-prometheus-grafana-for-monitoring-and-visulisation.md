@@ -4,6 +4,7 @@ title: Nagios Monitoring - setting up, adding new hosts, and adding new services
 slug: /blog/nagios-prometheus-grafana-for-monitoring-and-visualisation
 date: 2026-01-20 09:53
 description: devops, devsecops, nagios, prometheus, grafana,
+featuredImage: /assets/1-nagios-ui.png
 ---
 In today's article, we will deep-dive into the  Nagios - an open source server/service monitoring system. It tracks the availability and performance of IT infrastructure such as servers, services, network devices, and applications. It alerts admins when something goes wrong, helps ensure uptime, and provides insights via dashboards and reports.
 
