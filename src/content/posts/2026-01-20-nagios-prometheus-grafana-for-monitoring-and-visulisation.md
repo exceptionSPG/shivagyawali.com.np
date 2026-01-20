@@ -7,8 +7,6 @@ description: devops, devsecops, nagios, prometheus, grafana,
 ---
 In today's article, we will deep-dive into the stack Nagios + Prometheus + Grafana to monitor and visualize time series data/statistics. 
 
-
-
 # Environment setup
 
 We will run our environment using docker (docker-compose in fact). 
@@ -49,8 +47,6 @@ So, create folder nagios/ which will have two things:
 * nagios.cfg - main config file nagios runs with. we map this to \`/opt/nagios/etc/nagios.cfg\` of the container.
 * objects - directory which will contain other objects config files, and is mapped to /opt/nagios/etc/objects directory of the container. 
 
-
-
 After setting up these things, let's spin up our container:
 
 \`docker-compose up -d\` 
@@ -59,7 +55,19 @@ This should start our container, confirm by:
 
 \`docker ps\` or \`docker-compose ps\` 
 
-Now, visit http://localhost:8081, and you shall see the nagios UI:
+Now, visit <http://localhost:8081>, and you shall see the nagios UI:
+
+![](/assets/1-nagios-ui.png "Nagios Home UI")
+
+
+
+If you check the hosts, it will show you localhost (which is added by default). 
+
+Now, we will see how to add new hosts to our Nagios Monitoring:
+
+
+
+
 
 
 
