@@ -5,15 +5,9 @@ slug: /blog/installing-ansible-on-macos
 date: 2025-10-07 18:46
 description: "ansible, configuration management, devops, "
 ---
-
-
-
-
 Install ansible using HomeBrew:
 
 \`brew install ansible\`
-
-
 
 Verify installation by:
 
@@ -22,8 +16,6 @@ Verify installation by:
 It shows:
 
 ![](/assets/1-installation.png)
-
-
 
 ```
 ansible --version
@@ -67,3 +59,38 @@ ansible [core 2.20.1]
 ```
 
 It shows our config file.
+
+Let's first uncomment our inventory file in config file:
+
+```
+vi /Users/exceptionspg/.ansible/ansible.cfg
+
+[search for /inventory then, put our hosts file as inventory]
+
+```
+
+We can add our hosts to ~/.ansible/hosts file (which is inventory file). Be careful on putting user, otherwise it may fail.
+
+```
+cat hosts
+[demo]
+192.168.64.6 		ansible_user=ubuntu
+
+
+[kailaba]
+kailaba.com 		ansible_user=kailabac
+```
+
+After this, we can test our setup with:
+
+\`ansible -m ping demo\`
+
+![](/assets/3-ping-hosts.png)
+
+
+
+We can list out files/directory using "ls" commands:
+
+`ansible demo -a "ls"
+
+![](/assets/4-ls.png)
