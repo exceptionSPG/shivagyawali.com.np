@@ -5,7 +5,7 @@ slug: /blog/nagios-prometheus-grafana-for-monitoring-and-visualisation
 date: 2026-01-20 09:53
 description: devops, devsecops, nagios, prometheus, grafana,
 ---
-In today's article, we will deep-dive into the stack Nagios + Prometheus + Grafana to monitor and visualize time series data/statistics. 
+In today's article, we will deep-dive into the  Nagios - an open source server/service monitoring tool. 
 
 # Environment setup
 
@@ -159,14 +159,32 @@ Let's save the file, restart the container and verify if our config is synced.
 
 If everything goes well, voila, you should see:
 
+![](/assets/7-new-service-added.png "New service added")
+
+You see, new service is added. 
+
+But, wait, it is still in Pending status. 
+
+Since, port 80 is not serving on our ubuntu-server host, the status shows: CRITICAL, Connection refused.
+
+![](/assets/8-connection-refused.png "connection refused")
 
 
 
+Let's start port 80 and reschedule the service check.
+
+![](/assets/9-port80-serving.png "Port 80 serving on ubuntu-server")
 
 
 
+Now, let's wait for next check.
+
+![](/assets/10-service-ok.png "New service test is successful.")
+
+Voilaa, you can see now Nagios can monitor the port 80 on our ubuntu-server. 
+
+We can add many more such services, or monitoring such as CPU, Memory usage, and so on. 
 
 
 
-
-similarly, we run prometheus and grafana as shown below:
+In next article, we will leverage the visualization power of Grafana along with Prometheus, for real-time monitoring and visualisation.
