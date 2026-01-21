@@ -4,6 +4,7 @@ title: Installing Ansible on MacOS
 slug: /blog/installing-ansible-on-macos
 date: 2025-10-07 18:46
 description: "ansible, configuration management, devops, "
+featuredImage: /assets/1-installation.png
 ---
 Install ansible using HomeBrew:
 
