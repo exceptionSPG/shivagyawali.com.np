@@ -3,8 +3,37 @@ template: blog-post
 title: Reset your upload key on Google Play Console
 slug: /blog/reset-your-upload-key-on-google-play-console
 date: 2024-10-13 23:32
-description: "android development, google play console, upload key reset,
-  android app update "
+description: >-
+  android development, google play console, upload key reset, android app
+  update, google play console reset upload key,
+
+  request upload key reset,
+
+  reset keystore google play,
+
+  there is a pending request for resetting the upload key of this app,
+
+  google play console keystore,
+
+  reset upload key google play console,
+
+  google play console reset upload key play app signing,
+
+  request upload key reset google play console,
+
+  lost keystore file google play,
+
+  reset upload key play console,
+
+  reset upload key google play,
+
+  google play console request upload key reset,
+
+  reset upload key play console help,
+
+  reset upload key play console support,
+
+  reset your upload key play console help,
 featuredImage: /assets/play-console-request.png
 ---
 Dear all, 
