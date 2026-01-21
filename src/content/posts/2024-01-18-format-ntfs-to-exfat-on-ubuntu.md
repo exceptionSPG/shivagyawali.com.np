@@ -3,7 +3,20 @@ template: blog-post
 title: Format NTFS to exFAT on Ubuntu
 slug: format-ntfs-to-exfat-on-ubuntu
 date: 2024-01-18 11:41
-description: format disk, ntfs, exfat, ntfs-to-exfat,
+description: |-
+  format disk, ntfs, exfat, ntfs-to-exfat, ubuntu format exfat,
+  exfat linux ubuntu,
+  ubuntu format to exfat,
+  how to change ntfs to exfat,
+  exfat in ubuntu,
+  ntfs to exfat,
+  format ntfs to exfat,
+  how to format ntfs to exfat,
+  convert ntfs to exfat,
+  exfat on ubuntu,
+  how to convert ntfs to exfat,
+  mkfs exfat,
+  mkfs extfat,
 featuredImage: /assets/ntfs-to-extfat.png
 ---
 I have a hard disk, formatted with NTFS file system. 
