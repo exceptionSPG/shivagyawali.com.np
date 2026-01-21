@@ -3,7 +3,9 @@ template: blog-post
 title: Install gdb debugger without root access
 slug: /blog/install-gdb-debugger-without-sudo-access
 date: 2024-10-25 12:37
-description: gdb, gdb debugger, Shiva Gyawali, kailaba,
+description: "gdb, gdb debugger, Shiva Gyawali, kailaba, gdb debugger download,
+  sudo apt install gdb, building gdb requires gmp 4.2+, and mpfr 3.1.0+, install
+  gdb, configure: error: building gdb requires gmp 4.2+, and mpfr 3.1.0+."
 featuredImage: /assets/gdb-not-found.png
 ---
 Recently, while reading book: Hacking: The art of exploitation, I came an urge to use [gdb](https://www.sourceware.org/gdb/) - every hacker's best friend. But, I wanted it to install on my shared-hosting server, so that I can access it from anywhere, literally anywhere and do my reading ease and accessible.
