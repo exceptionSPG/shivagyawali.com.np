@@ -142,3 +142,11 @@ source ~/.zshrc
 
 
 Now, the warning should be gone.
+
+
+
+## Resources
+
+* [Ansible documentation](https://docs.ansible.com/projects/ansible/latest/installation_guide/intro_configuration.html#getting-the-latest-configuration)
+* [Ansible Documentation config](https://docs.ansible.com/projects/ansible/latest/reference_appendices/config.html)
+*
