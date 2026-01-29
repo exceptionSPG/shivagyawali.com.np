@@ -67,7 +67,6 @@ Let's first uncomment our inventory file in config file:
 vi /Users/exceptionspg/.ansible/ansible.cfg
 
 [search for /inventory then, put our hosts file as inventory]
-
 ```
 
 We can add our hosts to ~/.ansible/hosts file (which is inventory file). Be careful on putting user, otherwise it may fail.
@@ -88,10 +87,58 @@ After this, we can test our setup with:
 
 ![](/assets/3-ping-hosts.png)
 
-
-
 We can list out files/directory using "ls" commands:
 
 `ansible demo -a "ls"
 
 ![](/assets/4-ls.png)
+
+
+
+If you are getting output: 
+
+ansible all --list-hosts
+\[WARNING]: No inventory was parsed, only implicit localhost is available
+\[WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+
+
+This might be because of config again shown as None. 
+
+![](/assets/6-none.png "Config shown None.")
+
+I accessed ansible few days later, and again the None was shown for the config file.
+
+If you don't have already generated the config file, generate one: 
+
+```
+#generate a fully commented-out example ansible.cfg file,
+ansible-config init --disabled > ansible.cfg
+
+#more complete file that includes existing plugins:
+ansible-config init --disabled -t all > ansible.cfg
+
+```
+
+OR, easiest way to do is, to set [`ANSIBLE_CONFIG`](https://docs.ansible.com/projects/ansible/latest/reference_appendices/config.html#envvar-ANSIBLE_CONFIG) environment variable with path of our config file.
+
+`export [`ANSIBLE_CONFIG`](https://docs.ansible.com/projects/ansible/latest/reference_appendices/config.html#envvar-ANSIBLE_CONFIG)=~/.ansible/ansible.cfg` 
+
+
+
+For permanent changes, add this line to our .bashrc or .zshrc file:
+
+```
+vi ~/.zshrc or ~/.bashrc
+
+# Add this line at the end
+export ANSIBLE_CONFIG=~/.ansible/ansible.cfg
+
+
+# set new file as source
+source ~/.zshrc 
+```
+
+
+
+Now, the warning should be gone.
