@@ -93,3 +93,44 @@ Once you hit the send button for your POST request, it should trigger the pipeli
 Let's check the details of a pipeline.
 
 ![](/assets/6-automatic-trigger.png)
+
+
+
+Let's use a different payload structure:
+
+```
+#
+name: $(date:yy).$(date:MMdd)$(rev:.r)
+
+trigger: none
+
+resources:
+  webhooks:
+    - webhook: "shivaTestWH"
+      connection: "shivaTestWHSC"
+
+steps:  
+# {
+#    "my": {
+#        "boss": {
+#            "title": "Loves me.",
+#            "sub": "I swear you."
+#        }
+#    }
+# }
+#
+#
+
+- script: |
+    echo "Printing details"
+    echo "Title:" ${{ parameters.shivaTestWH.my.boss.title }}
+    echo ${{ parameters.shivaTestWH.my.boss.sub }}
+```
+
+
+
+This is important when we can't change/modify the structure of payload (cases where we directly want to feed webhook request by some other system, such as Webhooks from SonarQube analysis).
+
+
+
+![](/assets/7-pipelineoutput.png)
