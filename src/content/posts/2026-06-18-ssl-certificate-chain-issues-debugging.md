@@ -4,6 +4,7 @@ title: SSL Certificate Chain issues debugging
 slug: /blog/ssl-certificate-chain-issues-debugging
 date: 2026-06-18 22:26
 description: ssl, ssl certificate, ssl certificate chain,
+featuredImage: /assets/4-depict.png
 ---
 verify error:num=20:unable to get local issuer certificate
 
