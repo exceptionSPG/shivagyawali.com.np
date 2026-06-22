@@ -225,6 +225,18 @@ per-category (`/category/<slug>/`) listing pages are unchanged.
 **Adding another section later** (e.g. Projects) is the same recipe: a new
 Decap collection + folder + a `*-post` template + a landing page + a menu entry.
 
+### 2026-06-22 — Homelab posts support categories & tags
+
+- Homelab posts now have the same **Category** + **Tags** fields as blog posts
+  and show the same colored badges (on the post and on the `/homelab/` cards).
+- Category options are a **shared list** across the Posts and Homelab
+  collections in `static/admin/config.yml`. When adding/removing a category,
+  update **both** collections so the dropdowns stay in sync.
+- The shared taxonomy pages include homelab posts: `/category/<slug>/`,
+  `/tags/<slug>/`, and the combined `/categories/` page list blog **and**
+  homelab posts (`template` in `[blog-post, homelab-post]`). So a category like
+  "Raspberry Pi" can collect posts from both sections.
+
 ---
 
 ## 4. Planned / upcoming work
