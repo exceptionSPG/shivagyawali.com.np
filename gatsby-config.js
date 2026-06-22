@@ -89,9 +89,14 @@ module.exports = {
     "gatsby-plugin-theme-ui",
     `gatsby-plugin-decap-cms`,
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: settings.ga,
+        // GA4 Measurement ID(s), e.g. "G-XXXXXXXXXX". Set in src/util/site.json.
+        trackingIds: settings.ga ? [settings.ga] : [],
+        pluginConfig: {
+          head: false,
+          respectDNT: true,
+        },
       },
     },
     `gatsby-plugin-sitemap`,
