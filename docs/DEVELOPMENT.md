@@ -134,13 +134,54 @@ npm run develop      # site should build and serve at :8000
 # visit /admin/ to confirm the Decap CMS UI loads
 ```
 
+### 2026-06-22 — Pass 2: Categories & Tags
+
+Branch: `feat/categories-tags` (off `feat/upgrade`). Each post can have one
+**category** (from a fixed list) and several **tags**.
+
+Frontmatter convention:
+
+```yaml
+category: DevOps
+tags: ["docker", "ci", "azure"]
+```
+
+Both are optional — posts without them render exactly as before. Backfill is
+done through Decap CMS (Posts → the Category dropdown + Tags list).
+
+What was added:
+
+- `src/util/taxonomy.js` — shared `kebabCase` + `tagPath`/`categoryPath`
+  helpers (unicode-aware), used by both `gatsby-node.js` and the templates.
+- `gatsby-node.js` — `createSchemaCustomization` declares `category`/`tags`
+  so GraphQL is safe before backfill; groups posts and generates paginated
+  `/tags/<slug>/` and `/category/<slug>/` pages.
+- `src/templates/tags.js`, `src/templates/category.js` — listing pages.
+- `src/components/pagination.js` — reusable pagination component.
+- `static/admin/config.yml` — Category (select) + Tags (list) fields.
+- Category and tag links shown on post cards and on each post page.
+
+URLs: `/tags/<tag-slug>/` and `/category/<category-slug>/`, paginated at 9
+posts per page (`/tags/<slug>/2/`, etc.).
+
+**Adding a new category:** edit the `options:` list of the `category` field in
+`static/admin/config.yml`. The category page is generated automatically once a
+post uses that value.
+
+#### How to verify locally
+
+```bash
+npm run develop
+# Add a category + a few tags to a post via /admin/ (or edit its frontmatter),
+# then visit /category/<slug>/ and /tags/<slug>/ and check the post card links.
+```
+
 ---
 
 ## 4. Planned / upcoming work
 
 Tracked for future passes (not yet implemented):
 
-- Categories (one per post) and tags (3–5 per post), with listing pages.
 - Easier menu management: add pages and external links / dropdown items.
 - RSS feed (`/feed` or `/rss`).
 - Upgrade theme-ui stack to `^0.17.x` and remove the `legacy-peer-deps` flag
