@@ -1,0 +1,13 @@
+[
+  { "title": "Home", "path": "/" },
+  { "title": "About", "path": "/about" },
+  { "title": "Blog", "path": "/blog" },
+  { "title": "Category", "path": "/categories/" },
+  { "title": "Homelab", "path": "/homelab/" },
+  {
+    "title": "YouTube",
+    "url": "https://www.youtube.com/@YOURCHANNEL",
+    "external": true,
+    "button": true
+  }
+]
