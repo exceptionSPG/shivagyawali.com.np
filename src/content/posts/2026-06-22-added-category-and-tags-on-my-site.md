@@ -12,3 +12,5 @@ tags:
   - ""
 ---
 This is my test post after adding category and tags feature. 
+
+I have merged the changes. let's rebuild things.
