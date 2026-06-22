@@ -59,16 +59,19 @@ collections:
           name: "category",
           widget: "select",
           required: false,
-          hint: "Pick one category. To add a new option, edit the list in static/admin/config.yml.",
+          hint: "Pick one category. Shared list for blog & homelab — to add an option, edit BOTH collections in static/admin/config.yml.",
           options:
             [
               "DevOps",
               "Linux",
               "Security",
+              "Networking",
               "Programming",
               "Android",
-              "Networking",
-              "Homelab",
+              "Raspberry Pi",
+              "Proxmox",
+              "Self-Hosting",
+              "Docker",
               "Language",
               "Personal",
             ],
@@ -127,6 +130,36 @@ collections:
           widget: "image",
           required: false,
           tagname: "",
+        }
+      - {
+          label: "Category",
+          name: "category",
+          widget: "select",
+          required: false,
+          hint: "Pick one category. Shared list for blog & homelab — to add an option, edit BOTH collections in static/admin/config.yml.",
+          options:
+            [
+              "DevOps",
+              "Linux",
+              "Security",
+              "Networking",
+              "Programming",
+              "Android",
+              "Raspberry Pi",
+              "Proxmox",
+              "Self-Hosting",
+              "Docker",
+              "Language",
+              "Personal",
+            ],
+        }
+      - {
+          label: "Tags",
+          name: "tags",
+          widget: "list",
+          required: false,
+          default: [],
+          hint: "Add 3–5 short tags, e.g. proxmox, pi, k3s.",
         }
       - {
           label: "Body",
