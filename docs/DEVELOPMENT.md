@@ -96,8 +96,23 @@ this pass); only clearly-deprecated pieces replaced.
   `decap-cms-app` pinned to `~3.6.0` — the **last** Decap line that peers
   React 18 (`3.7+` jumped to a React 19 peer, which Gatsby 4 doesn't support).
 - Gatsby manages the React root internally, so no app code changes were needed.
-- Watch on first run: `react-helmet@6` and `theme-ui@0.6` are older and may log
-  React 18 deprecation warnings; they still render. Report anything that breaks.
+
+**`.npmrc` legacy-peer-deps** (follow-up fix)
+
+- After the React bump, install failed again: `theme-ui@0.6.2` declares a
+  peer of React `16/17` only (the range predates React 18). It runs fine under
+  React 18 — the declared range is just conservative — but npm 7+ refuses to
+  install on the strict peer mismatch.
+- Rather than blind-migrating theme-ui across 11 minor versions (0.6 → 0.17,
+  which can't be build-tested in the sandbox and risks breaking the theme),
+  added `.npmrc` with `legacy-peer-deps=true`. This relaxes npm's strict peer
+  resolution; Netlify also reads `.npmrc`, so the production build is covered.
+- Trade-off: peer checks are relaxed project-wide. The proper follow-up is to
+  upgrade the theme-ui stack (`theme-ui`, `gatsby-plugin-theme-ui`,
+  `@theme-ui/color`) to `^0.17.x`, verify the theme/color-mode code, then drop
+  the flag. Tracked under "Planned / upcoming work".
+- Watch on first run: `react-helmet@6` and `theme-ui@0.6` may log React 18
+  deprecation warnings; they still render. Report anything that actually breaks.
 
 **Universal Analytics → GA4 (gtag)** (`commit 126c52e`)
 
@@ -128,3 +143,5 @@ Tracked for future passes (not yet implemented):
 - Categories (one per post) and tags (3–5 per post), with listing pages.
 - Easier menu management: add pages and external links / dropdown items.
 - RSS feed (`/feed` or `/rss`).
+- Upgrade theme-ui stack to `^0.17.x` and remove the `legacy-peer-deps` flag
+  from `.npmrc` (needs local build verification of theming + dark mode).
