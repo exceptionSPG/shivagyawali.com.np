@@ -25,6 +25,8 @@ description: |-
   ubuntu server lvm group,
   what is lvm in ubuntu,
 featuredImage: /assets/bench-accounting-nvzvopqw0gc-unsplash.jpg
+category: DevOps
+tags: ["makefile", "build", "cli"]
 ---
 Creating LVM (Logical Volume Management) on Ubuntu 22.04 allows you to efficiently manage storage resources by combining multiple disks or partitions into a single logical volume. 
 
