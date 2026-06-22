@@ -77,14 +77,27 @@ this pass); only clearly-deprecated pieces replaced.
 **Netlify CMS → Decap CMS** (`commit 1ddfbe4`)
 
 - Netlify CMS is deprecated and unmaintained; Decap CMS is its maintained
-  successor. Decap 3.x still supports React 16, so no React upgrade was needed.
-- `package.json`: `netlify-cms-app` → `decap-cms-app@^3.1.3`;
+  successor.
+- `package.json`: `netlify-cms-app` → `decap-cms-app`;
   `gatsby-plugin-netlify-cms` → `gatsby-plugin-decap-cms@^4.0.4`.
 - `gatsby-config.js`: plugin `gatsby-plugin-netlify-cms` → `gatsby-plugin-decap-cms`.
 - `static/admin/config.yml` + `README.md`: local backend helper command
   `npx netlify-cms-proxy-server` → `npx decap-server`.
 - The git-gateway backend and `config.yml` collections are unchanged, so CMS
   content editing is unaffected.
+
+**React 16 → 18 + Decap pin** (follow-up fix)
+
+- Decap CMS `3.1+` requires React 18 as a peer dependency (only the stale
+  `3.0.x` allowed React 16), so the first install failed with `ERESOLVE`.
+  Gatsby `4.24` has full React 18 support (since `4.11`), so we bumped React
+  rather than downgrading the CMS.
+- `package.json`: `react` + `react-dom` `^16.14.0` → `^18.2.0`;
+  `decap-cms-app` pinned to `~3.6.0` — the **last** Decap line that peers
+  React 18 (`3.7+` jumped to a React 19 peer, which Gatsby 4 doesn't support).
+- Gatsby manages the React root internally, so no app code changes were needed.
+- Watch on first run: `react-helmet@6` and `theme-ui@0.6` are older and may log
+  React 18 deprecation warnings; they still render. Report anything that breaks.
 
 **Universal Analytics → GA4 (gtag)** (`commit 126c52e`)
 
