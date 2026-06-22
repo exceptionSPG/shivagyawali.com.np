@@ -1,0 +1,117 @@
+# Development & Maintenance Guide
+
+This document explains **how to work on this site** and keeps a **running log of
+the changes** we make. Add a new entry to the Changelog every time we ship a
+meaningful change so the history stays readable without digging through git.
+
+The site is a [Gatsby](https://www.gatsbyjs.com/) blog (originally the
+`gatsby-starter-foundation` starter), edited through [Decap CMS](https://decapcms.org/)
+and deployed on [Netlify](https://www.netlify.com/).
+
+---
+
+## 1. Local setup
+
+Requirements: Node `18` (see `.node-version`) and npm.
+
+```bash
+# install dependencies
+npm install
+
+# start the dev server at http://localhost:8000
+npm run develop
+```
+
+GraphQL explorer runs at `http://localhost:8000/___graphql`.
+
+### Editing content locally with the CMS
+
+The admin UI lives at `/admin/`. To run the CMS against your local files
+instead of the live git backend:
+
+1. In `static/admin/config.yml`, uncomment `local_backend: true`.
+2. In one terminal run the Decap proxy: `npx decap-server`
+3. In another terminal run `npm run develop`.
+4. Open `http://localhost:8000/admin/`.
+
+> Note: the proxy command is `decap-server` (the old `netlify-cms-proxy-server`
+> is deprecated — see Changelog 2026-06-22).
+
+---
+
+## 2. How we make changes
+
+We work in **small, atomic commits** on a feature branch, verify locally, then
+merge.
+
+1. Branch from `main`, e.g. `git checkout -b feat/<short-name>`.
+2. Make one focused change per commit. Keep commit messages descriptive
+   (what + why).
+3. Verify locally with `npm install` (if deps changed) and `npm run develop`.
+4. Push the branch. Netlify builds a **deploy preview** for the PR — check it
+   before merging.
+5. Merge to `main`; Netlify deploys production automatically.
+
+### Where things live
+
+| Path | What |
+| --- | --- |
+| `src/content/posts/` | Blog posts (markdown + frontmatter) |
+| `src/content/pages/` | Home / About / Contact page content |
+| `src/templates/` | Page templates (blog-post, blog-list, pages) |
+| `src/components/` | Shared UI (header, navigation, footer, cards, search) |
+| `src/util/*.json` | Site metadata, colors, social links |
+| `static/admin/config.yml` | Decap CMS configuration (collections, fields) |
+| `gatsby-config.js` | Plugins & site config |
+| `gatsby-node.js` | Build-time page generation |
+
+---
+
+## 3. Changelog
+
+### 2026-06-22 — Upgrade pass 1: fix deprecated dependencies
+
+Branch: `feat/upgrade`. Stack kept on Gatsby 4 / React 16 (no framework bump
+this pass); only clearly-deprecated pieces replaced.
+
+**Netlify CMS → Decap CMS** (`commit 1ddfbe4`)
+
+- Netlify CMS is deprecated and unmaintained; Decap CMS is its maintained
+  successor. Decap 3.x still supports React 16, so no React upgrade was needed.
+- `package.json`: `netlify-cms-app` → `decap-cms-app@^3.1.3`;
+  `gatsby-plugin-netlify-cms` → `gatsby-plugin-decap-cms@^4.0.4`.
+- `gatsby-config.js`: plugin `gatsby-plugin-netlify-cms` → `gatsby-plugin-decap-cms`.
+- `static/admin/config.yml` + `README.md`: local backend helper command
+  `npx netlify-cms-proxy-server` → `npx decap-server`.
+- The git-gateway backend and `config.yml` collections are unchanged, so CMS
+  content editing is unaffected.
+
+**Universal Analytics → GA4 (gtag)** (`commit 126c52e`)
+
+- Universal Analytics stopped processing data in 2023; the
+  `gatsby-plugin-google-analytics` plugin targets it and is deprecated.
+- `package.json`: `gatsby-plugin-google-analytics` → `gatsby-plugin-google-gtag`.
+- `gatsby-config.js`: new `gatsby-plugin-google-gtag` block reading the
+  Measurement ID from `src/util/site.json` (`ga`), with `respectDNT: true`.
+- `src/util/site.json`: placeholder id updated from UA format (`UA-…`) to GA4
+  format (`G-XXXXXXXXXX`). **Action needed:** replace with your real GA4
+  Measurement ID to enable analytics. gtag only loads in production builds
+  (`gatsby build && gatsby serve`).
+
+#### How to verify pass 1 locally
+
+```bash
+npm install          # picks up the swapped dependencies
+npm run develop      # site should build and serve at :8000
+# visit /admin/ to confirm the Decap CMS UI loads
+```
+
+---
+
+## 4. Planned / upcoming work
+
+Tracked for future passes (not yet implemented):
+
+- Categories (one per post) and tags (3–5 per post), with listing pages.
+- Easier menu management: add pages and external links / dropdown items.
+- RSS feed (`/feed` or `/rss`).
