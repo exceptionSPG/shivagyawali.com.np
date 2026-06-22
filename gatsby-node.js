@@ -1,6 +1,21 @@
 const path = require("path")
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
+// Declare category/tags on the frontmatter so GraphQL queries don't fail
+// while posts are still being backfilled (Gatsby keeps inferring the rest).
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+  createTypes(`
+    type MarkdownRemark implements Node {
+      frontmatter: MarkdownRemarkFrontmatter
+    }
+    type MarkdownRemarkFrontmatter {
+      category: String
+      tags: [String]
+    }
+  `)
+}
+
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
 

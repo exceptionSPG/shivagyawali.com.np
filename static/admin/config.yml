@@ -54,6 +54,33 @@ collections:
           required: false,
           tagname: "",
         }
+      - {
+          label: "Category",
+          name: "category",
+          widget: "select",
+          required: false,
+          hint: "Pick one category. To add a new option, edit the list in static/admin/config.yml.",
+          options:
+            [
+              "DevOps",
+              "Linux",
+              "Security",
+              "Programming",
+              "Android",
+              "Networking",
+              "Homelab",
+              "Language",
+              "Personal",
+            ],
+        }
+      - {
+          label: "Tags",
+          name: "tags",
+          widget: "list",
+          required: false,
+          default: [],
+          hint: "Add 3–5 short tags, e.g. docker, ci, azure.",
+        }
 
       - {
           label: "Body",
