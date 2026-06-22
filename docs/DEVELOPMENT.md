@@ -189,14 +189,51 @@ npm run develop
   light value and a `modes.dark` value for each).
 - Not yet linked in the site menu — that comes with the menu feature below.
 
+### 2026-06-22 — Pass 3: Menu, combined Categories & Tags, Homelab
+
+Branch: `feat/menu-homelab` (off `feat/categories-tags`).
+
+**Data-driven menu** — `src/util/menu.json` now defines the nav. Edit that one
+file to add, remove, or reorder items. Each item:
+
+```json
+{ "title": "Blog", "path": "/blog" }
+{ "title": "YouTube", "url": "https://…", "external": true, "button": true }
+```
+
+- `path` → internal link; `url` + `"external": true` → external link (opens in
+  a new tab); `"button": true` → highlighted button style.
+- Current menu: Home, About, Blog, Category (`/categories/`),
+  Homelab (`/homelab/`), YouTube (external button). Contact was removed from
+  the menu (the page itself still exists).
+- **Action:** replace the placeholder YouTube URL in `src/util/menu.json`.
+
+**Combined Categories & Tags page** — `/categories/` now lists both categories
+and tags with counts; `/tags/` redirects there. Per-tag (`/tags/<slug>/`) and
+per-category (`/category/<slug>/`) listing pages are unchanged.
+
+**Homelab section** — a content area separate from the blog:
+
+- New Decap collection **Homelab** → files in `src/content/homelab/`, template
+  `homelab-post`, URLs under `/homelab/<slug>`.
+- `/homelab/` landing page (`src/pages/homelab.js`) lists homelab posts;
+  `src/templates/homelab-post.js` renders each one.
+- Homelab posts use `template: homelab-post`, so they never show up in the main
+  blog list. Add one via the CMS (Homelab → New) or drop a markdown file in
+  `src/content/homelab/` with a `/homelab/...` slug.
+
+**Adding another section later** (e.g. Projects) is the same recipe: a new
+Decap collection + folder + a `*-post` template + a landing page + a menu entry.
+
 ---
 
 ## 4. Planned / upcoming work
 
 Tracked for future passes (not yet implemented):
 
-- Easier menu management: add pages and external links / dropdown items
-  (and surface `/categories/` + `/tags/` in the menu).
+- "Add pages" in Decap (a folder Pages collection) plus the editorial
+  draft/publish workflow (`publish_mode: editorial_workflow`).
 - RSS feed (`/feed` or `/rss`).
+- Optional: make the menu editable from Decap instead of the repo JSON file.
 - Upgrade theme-ui stack to `^0.17.x` and remove the `legacy-peer-deps` flag
   from `.npmrc` (needs local build verification of theming + dark mode).
