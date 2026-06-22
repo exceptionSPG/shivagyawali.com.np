@@ -6,6 +6,7 @@ import { RiArrowRightLine, RiArrowLeftLine } from "react-icons/ri"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import { tagPath, categoryPath } from "../util/taxonomy"
 
 const styles = {
   "article blockquote": {
@@ -95,7 +96,15 @@ const Post = ({ data, pageContext }) => {
         <header className="featured-banner">
           <section className="article-header">
             <h1>{frontmatter.title}</h1>
-            <time sx={{color: "muted"}}>{frontmatter.date}</time>
+            <time sx={{ color: "muted" }}>{frontmatter.date}</time>
+            {frontmatter.category ? (
+              <Link
+                to={categoryPath(frontmatter.category)}
+                sx={{ variant: "links.postLink", ml: 2 }}
+              >
+                {frontmatter.category}
+              </Link>
+            ) : null}
           </section>
           {Image ? (
             <GatsbyImage
@@ -112,6 +121,26 @@ const Post = ({ data, pageContext }) => {
           className="blog-post-content"
           dangerouslySetInnerHTML={{ __html: html }}
         />
+        {frontmatter.tags && frontmatter.tags.length > 0 ? (
+          <ul
+            className="post-tags"
+            sx={{
+              listStyle: "none",
+              p: 0,
+              mt: 3,
+              display: "flex",
+              flexWrap: "wrap",
+            }}
+          >
+            {frontmatter.tags.map(tag => (
+              <li key={tag} sx={{ mr: 2, mb: 2 }}>
+                <Link to={tagPath(tag)} sx={{ variant: "links.postLink" }}>
+                  #{tag}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        ) : null}
       </article>
       {(previous || next) && <Pagination {...props} />}
     </Layout>
@@ -131,6 +160,8 @@ export const pageQuery = graphql`
         slug
         title
         description
+        category
+        tags
         featuredImage {
           childImageSharp {
             gatsbyImageData(layout: FULL_WIDTH)

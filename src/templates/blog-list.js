@@ -37,6 +37,8 @@ export const blogListQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             slug
             title
+            category
+            tags
             featuredImage {
               childImageSharp {
                 gatsbyImageData(layout: CONSTRAINED, width: 345, height: 260)
