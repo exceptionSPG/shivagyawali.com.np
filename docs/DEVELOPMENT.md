@@ -176,13 +176,27 @@ npm run develop
 # then visit /category/<slug>/ and /tags/<slug>/ and check the post card links.
 ```
 
+### 2026-06-22 — Categories & Tags: index pages + colored badges
+
+- **Index pages:** `/categories/` (`src/pages/categories.js`) and `/tags/`
+  (`src/pages/tags.js`) list every category/tag with its post count, sorted by
+  count, rendered as colored badges that link to each listing page.
+- **Colored badges:** `src/components/taxonomy-badges.js` exports
+  `CategoryBadge`, `TagBadge`, and `TagList`, used on post cards, post pages,
+  and the index pages. Category pills are **purple**, tag pills **maroon**.
+- **Changing the colors:** edit the theme tokens `categoryBg` / `categoryText`
+  / `tagBg` / `tagText` in `src/gatsby-plugin-theme-ui/index.js` (there's a
+  light value and a `modes.dark` value for each).
+- Not yet linked in the site menu — that comes with the menu feature below.
+
 ---
 
 ## 4. Planned / upcoming work
 
 Tracked for future passes (not yet implemented):
 
-- Easier menu management: add pages and external links / dropdown items.
+- Easier menu management: add pages and external links / dropdown items
+  (and surface `/categories/` + `/tags/` in the menu).
 - RSS feed (`/feed` or `/rss`).
 - Upgrade theme-ui stack to `^0.17.x` and remove the `legacy-peer-deps` flag
   from `.npmrc` (needs local build verification of theming + dark mode).
