@@ -67,7 +67,7 @@ export default CategoriesPage
 export const query = graphql`
   {
     categories: allMarkdownRemark(
-      filter: { frontmatter: { template: { eq: "blog-post" } } }
+      filter: { frontmatter: { template: { in: ["blog-post", "homelab-post"] } } }
     ) {
       group(field: frontmatter___category) {
         fieldValue
@@ -75,7 +75,7 @@ export const query = graphql`
       }
     }
     tags: allMarkdownRemark(
-      filter: { frontmatter: { template: { eq: "blog-post" } } }
+      filter: { frontmatter: { template: { in: ["blog-post", "homelab-post"] } } }
     ) {
       group(field: frontmatter___tags) {
         fieldValue

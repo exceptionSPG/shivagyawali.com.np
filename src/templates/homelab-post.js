@@ -6,6 +6,7 @@ import { RiArrowRightLine, RiArrowLeftLine } from "react-icons/ri"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import { CategoryBadge, TagList } from "../components/taxonomy-badges"
 
 const styles = {
   pagination: {
@@ -74,7 +75,17 @@ const HomelabPost = ({ data, pageContext }) => {
         <header className="featured-banner">
           <section className="article-header">
             <h1>{frontmatter.title}</h1>
-            <time sx={{ color: "muted" }}>{frontmatter.date}</time>
+            <div
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                flexWrap: "wrap",
+                gap: 2,
+              }}
+            >
+              <time sx={{ color: "muted" }}>{frontmatter.date}</time>
+              <CategoryBadge category={frontmatter.category} />
+            </div>
           </section>
           {Image ? (
             <GatsbyImage
@@ -91,6 +102,7 @@ const HomelabPost = ({ data, pageContext }) => {
           className="blog-post-content"
           dangerouslySetInnerHTML={{ __html: html }}
         />
+        <TagList tags={frontmatter.tags} />
       </article>
       {(previous || next) && <Pagination previous={previous} next={next} />}
     </Layout>
@@ -110,6 +122,8 @@ export const pageQuery = graphql`
         slug
         title
         description
+        category
+        tags
         featuredImage {
           childImageSharp {
             gatsbyImageData(layout: FULL_WIDTH)

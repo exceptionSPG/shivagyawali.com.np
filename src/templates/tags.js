@@ -41,7 +41,10 @@ export const tagPageQuery = graphql`
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
       filter: {
-        frontmatter: { template: { eq: "blog-post" }, tags: { in: [$tag] } }
+        frontmatter: {
+          template: { in: ["blog-post", "homelab-post"] }
+          tags: { in: [$tag] }
+        }
       }
       limit: $limit
       skip: $skip

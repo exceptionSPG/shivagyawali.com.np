@@ -42,7 +42,7 @@ export const categoryPageQuery = graphql`
       sort: { order: DESC, fields: [frontmatter___date] }
       filter: {
         frontmatter: {
-          template: { eq: "blog-post" }
+          template: { in: ["blog-post", "homelab-post"] }
           category: { eq: $category }
         }
       }
