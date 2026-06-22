@@ -110,7 +110,7 @@ _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This
 
 Open the `gatsby-starter-foundation` directory in your code editor of choice and edit. Save your changes and the browser will update in real time!
 
-You can use Netlify CMS in you local just run `npx netlify-cms-proxy-server` and start run `gatsby develop`
+You can use Decap CMS in your local just run `npx decap-server` and start run `gatsby develop`
 
 ## 📁 Folder Structure
 

@@ -9,52 +9,39 @@ import Seo from "../components/seo"
 import { CategoryBadge, TagList } from "../components/taxonomy-badges"
 
 const styles = {
-  "article blockquote": {
-    "background-color": "cardBg",
-  },
   pagination: {
     a: {
       color: "muted",
-      "&.is-active": {
-        color: "text",
-      },
-      "&:hover": {
-        color: "text",
-      },
+      "&.is-active": { color: "text" },
+      "&:hover": { color: "text" },
     },
   },
 }
 
+// Only link to neighbouring homelab posts, not blog posts.
 const Pagination = props => (
   <div className="pagination -post" sx={styles.pagination}>
     <ul>
-      {props.previous && props.previous.frontmatter.template === "blog-post" && (
-        <li>
-          <Link to={props.previous.frontmatter.slug} rel="prev">
-            <p
-              sx={{
-                color: "muted",
-              }}
-            >
-              <span className="icon -left">
-                <RiArrowLeftLine />
-              </span>{" "}
-              Previous
-            </p>
-            <span className="page-title">
-              {props.previous.frontmatter.title}
-            </span>
-          </Link>
-        </li>
-      )}
-      {props.next && props.next.frontmatter.template === "blog-post" && (
+      {props.previous &&
+        props.previous.frontmatter.template === "homelab-post" && (
+          <li>
+            <Link to={props.previous.frontmatter.slug} rel="prev">
+              <p sx={{ color: "muted" }}>
+                <span className="icon -left">
+                  <RiArrowLeftLine />
+                </span>{" "}
+                Previous
+              </p>
+              <span className="page-title">
+                {props.previous.frontmatter.title}
+              </span>
+            </Link>
+          </li>
+        )}
+      {props.next && props.next.frontmatter.template === "homelab-post" && (
         <li>
           <Link to={props.next.frontmatter.slug} rel="next">
-            <p
-              sx={{
-                color: "muted",
-              }}
-            >
+            <p sx={{ color: "muted" }}>
               Next{" "}
               <span className="icon -right">
                 <RiArrowRightLine />
@@ -68,27 +55,19 @@ const Pagination = props => (
   </div>
 )
 
-const Post = ({ data, pageContext }) => {
-  const { markdownRemark } = data // data.markdownRemark holds your post data
+const HomelabPost = ({ data, pageContext }) => {
+  const { markdownRemark } = data
   const { frontmatter, html, excerpt } = markdownRemark
-
   const Image = frontmatter.featuredImage
     ? frontmatter.featuredImage.childImageSharp.gatsbyImageData
     : ""
   const { previous, next } = pageContext
 
-  let props = {
-    previous,
-    next,
-  }
-
   return (
     <Layout className="page">
       <Seo
         title={frontmatter.title}
-        description={
-          frontmatter.description ? frontmatter.description : excerpt
-        }
+        description={frontmatter.description ? frontmatter.description : excerpt}
         image={Image}
         article={true}
       />
@@ -125,15 +104,15 @@ const Post = ({ data, pageContext }) => {
         />
         <TagList tags={frontmatter.tags} />
       </article>
-      {(previous || next) && <Pagination {...props} />}
+      {(previous || next) && <Pagination previous={previous} next={next} />}
     </Layout>
   )
 }
 
-export default Post
+export default HomelabPost
 
 export const pageQuery = graphql`
-  query BlogPostQuery($id: String!) {
+  query HomelabPostQuery($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
       html

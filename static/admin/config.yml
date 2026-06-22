@@ -9,7 +9,7 @@ backend:
     deleteMedia: "[skip ci] Delete “{{path}}”"
 
 # Uncomment local_backend when you need to develop in your local
-#local_backend: true # run `npx netlify-cms-proxy-server` for local testing
+#local_backend: true # run `npx decap-server` for local testing
 
 media_folder: "static/assets"
 public_folder: "/assets"
@@ -54,7 +54,113 @@ collections:
           required: false,
           tagname: "",
         }
+      - {
+          label: "Category",
+          name: "category",
+          widget: "select",
+          required: false,
+          hint: "Pick one category. Shared list for blog & homelab — to add an option, edit BOTH collections in static/admin/config.yml.",
+          options:
+            [
+              "DevOps",
+              "Linux",
+              "Security",
+              "Networking",
+              "Programming",
+              "Android",
+              "Raspberry Pi",
+              "Proxmox",
+              "Self-Hosting",
+              "Docker",
+              "Language",
+              "Personal",
+            ],
+        }
+      - {
+          label: "Tags",
+          name: "tags",
+          widget: "list",
+          required: false,
+          default: [],
+          hint: "Add 3–5 short tags, e.g. docker, ci, azure.",
+        }
 
+      - {
+          label: "Body",
+          name: "body",
+          widget: "markdown",
+          hint: "Main content goes here.",
+        }
+  - name: "homelab"
+    label: "Homelab"
+    label_singular: "Homelab Post"
+    description: >
+      Posts and notes about your homelab. These live in their own /homelab/
+      section, separate from the main blog.
+    folder: "src/content/homelab"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} — {{year}}/{{month}}/{{day}}"
+    create: true
+    fields:
+      - {
+          label: "Template",
+          name: "template",
+          widget: "hidden",
+          default: "homelab-post",
+        }
+      - { label: "Title", name: "title", widget: "string", tagname: "h1" }
+      - {
+          label: "Slug",
+          name: "slug",
+          widget: "string",
+          hint: "Start with /homelab/ … e.g. /homelab/i-started-my-homelab",
+        }
+      - {
+          label: "Publish Date",
+          name: "date",
+          widget: "datetime",
+          dateFormat: "YYYY-MM-DD",
+          timeFormat: "HH:mm",
+          format: "YYYY-MM-DD HH:mm",
+        }
+      - { label: "SEO Description", name: "description", widget: "text" }
+      - {
+          label: "Featured Image",
+          name: "featuredImage",
+          widget: "image",
+          required: false,
+          tagname: "",
+        }
+      - {
+          label: "Category",
+          name: "category",
+          widget: "select",
+          required: false,
+          hint: "Pick one category. Shared list for blog & homelab — to add an option, edit BOTH collections in static/admin/config.yml.",
+          options:
+            [
+              "DevOps",
+              "Linux",
+              "Security",
+              "Networking",
+              "Programming",
+              "Android",
+              "Raspberry Pi",
+              "Proxmox",
+              "Self-Hosting",
+              "Docker",
+              "Language",
+              "Personal",
+            ],
+        }
+      - {
+          label: "Tags",
+          name: "tags",
+          widget: "list",
+          required: false,
+          default: [],
+          hint: "Add 3–5 short tags, e.g. proxmox, pi, k3s.",
+        }
       - {
           label: "Body",
           name: "body",

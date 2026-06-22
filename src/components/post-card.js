@@ -2,6 +2,7 @@
 import { jsx } from "theme-ui"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
+import { CategoryBadge, TagList } from "./taxonomy-badges"
 
 const PostCard = ({ data }) => (
   <article
@@ -36,10 +37,16 @@ const PostCard = ({ data }) => (
         className="meta"
         sx={{
           color: "muted",
+          display: "flex",
+          alignItems: "center",
+          flexWrap: "wrap",
+          gap: 2,
         }}
       >
         <time>{data.frontmatter.date}</time>
+        <CategoryBadge category={data.frontmatter.category} />
       </p>
+      <TagList tags={data.frontmatter.tags} />
     </div>
   </article>
 )
