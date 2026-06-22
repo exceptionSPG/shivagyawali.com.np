@@ -69,11 +69,35 @@ export const pageQuery = graphql`
         }
       }
     }
+    homelabPosts: allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: { frontmatter: { template: { eq: "homelab-post" } } }
+      limit: 3
+    ) {
+      edges {
+        node {
+          id
+          excerpt(pruneLength: 250)
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            slug
+            title
+            category
+            tags
+            featuredImage {
+              childImageSharp {
+                gatsbyImageData(layout: CONSTRAINED, width: 345, height: 260)
+              }
+            }
+          }
+        }
+      }
+    }
   }
 `
 
 const HomePage = ({ data }) => {
-  const { markdownRemark, posts } = data // data.markdownRemark holds your post data
+  const { markdownRemark, posts, homelabPosts } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
   const Image = frontmatter.featuredImage
     ? frontmatter.featuredImage.childImageSharp.gatsbyImageData
@@ -254,7 +278,28 @@ const HomePage = ({ data }) => {
           )}
         </div>
       </div>
-      <BlogListHome data={posts} />
+      <BlogListHome
+        data={posts}
+        title={
+          <span>
+            Latest in <strong>Blog</strong>
+          </span>
+        }
+        viewAllPath="/blog"
+        viewAllLabel="See more"
+      />
+      {homelabPosts.edges.length > 0 && (
+        <BlogListHome
+          data={homelabPosts}
+          title={
+            <span>
+              Explore my <strong>Homelab</strong>
+            </span>
+          }
+          viewAllPath="/homelab/"
+          viewAllLabel="View all homelab posts"
+        />
+      )}
     </Layout>
   )
 }

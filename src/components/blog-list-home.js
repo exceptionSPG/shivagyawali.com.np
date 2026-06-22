@@ -5,18 +5,31 @@ import { RiArrowDownLine, RiArrowRightSLine } from "react-icons/ri"
 
 import PostCard from "./post-card"
 
-export default function BlogListHome(props) {
-  const data = props.data
+// Reusable "latest posts" section for the homepage. Defaults to the blog,
+// but title / view-all link can be overridden (e.g. for Homelab).
+export default function BlogListHome({
+  data,
+  title = "Latest in Blog",
+  viewAllPath = "/blog",
+  viewAllLabel = "See more",
+}) {
   const posts = data.edges
     .filter(edge => !!edge.node.frontmatter.date)
     .map(edge => <PostCard key={edge.node.id} data={edge.node} />)
-  return <PostMaker data={posts} />
+  return (
+    <PostMaker
+      data={posts}
+      title={title}
+      viewAllPath={viewAllPath}
+      viewAllLabel={viewAllLabel}
+    />
+  )
 }
 
-const PostMaker = ({ data }) => (
+const PostMaker = ({ data, title, viewAllPath, viewAllLabel }) => (
   <section className="home-posts">
     <h2>
-      Latest in <strong>Blog</strong>{" "}
+      {title}{" "}
       <span className="icon -right">
         <RiArrowDownLine />
       </span>
@@ -24,12 +37,12 @@ const PostMaker = ({ data }) => (
     <div className="grids col-1 sm-2 lg-3">{data}</div>
     <Link
       className="button"
-      to="/blog"
+      to={viewAllPath}
       sx={{
         variant: "variants.button",
       }}
     >
-      See more
+      {viewAllLabel}
       <span className="icon -right">
         <RiArrowRightSLine />
       </span>
