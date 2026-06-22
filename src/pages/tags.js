@@ -1,57 +1,19 @@
-/** @jsx jsx */
-import { jsx } from "theme-ui"
-import { graphql } from "gatsby"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-import { TagBadge } from "../components/taxonomy-badges"
+import React, { useEffect } from "react"
+import { navigate } from "gatsby"
 
-const TagsPage = ({ data }) => {
-  const tags = [...data.allMarkdownRemark.group].sort(
-    (a, b) => b.totalCount - a.totalCount
-  )
+// The standalone tags index was merged into the combined "/categories/"
+// page (Categories & Tags). This page now just redirects there.
+// Per-tag listing pages (/tags/<slug>/) are still generated in gatsby-node.
+const TagsRedirect = () => {
+  useEffect(() => {
+    navigate("/categories/", { replace: true })
+  }, [])
 
   return (
-    <Layout className="page">
-      <Seo title="Tags" description="Browse posts by tag" />
-      <h1>Tags</h1>
-      {tags.length === 0 ? (
-        <p sx={{ color: "muted" }}>No tags yet.</p>
-      ) : (
-        <ul
-          sx={{
-            listStyle: "none",
-            p: 0,
-            display: "flex",
-            flexWrap: "wrap",
-            gap: 3,
-          }}
-        >
-          {tags.map(({ fieldValue, totalCount }) => (
-            <li
-              key={fieldValue}
-              sx={{ display: "flex", alignItems: "center", gap: 2 }}
-            >
-              <TagBadge tag={fieldValue} />
-              <span sx={{ color: "muted", fontSize: 0 }}>{totalCount}</span>
-            </li>
-          ))}
-        </ul>
-      )}
-    </Layout>
+    <p style={{ padding: "2rem", textAlign: "center" }}>
+      Redirecting to <a href="/categories/">Categories &amp; Tags</a>…
+    </p>
   )
 }
 
-export default TagsPage
-
-export const query = graphql`
-  {
-    allMarkdownRemark(
-      filter: { frontmatter: { template: { eq: "blog-post" } } }
-    ) {
-      group(field: frontmatter___tags) {
-        fieldValue
-        totalCount
-      }
-    }
-  }
-`
+export default TagsRedirect
