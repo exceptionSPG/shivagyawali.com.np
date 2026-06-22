@@ -225,6 +225,16 @@ per-category (`/category/<slug>/`) listing pages are unchanged.
 **Adding another section later** (e.g. Projects) is the same recipe: a new
 Decap collection + folder + a `*-post` template + a landing page + a menu entry.
 
+### 2026-06-22 — Homepage Homelab section + YouTube link
+
+- The homepage now shows an "Explore my Homelab" section (3 latest homelab
+  posts + a "View all homelab posts" button), below "Latest in Blog". It's
+  hidden automatically when there are no homelab posts. Change the count via
+  the `homelabPosts` query `limit` in `src/templates/index-page.js`.
+- `BlogListHome` is now reusable: it takes `title`, `viewAllPath`, and
+  `viewAllLabel` props.
+- The YouTube menu button now points to the real channel.
+
 ### 2026-06-22 — Homelab posts support categories & tags
 
 - Homelab posts now have the same **Category** + **Tags** fields as blog posts
