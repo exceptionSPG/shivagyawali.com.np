@@ -10,6 +10,7 @@ import "../assets/scss/style.scss"
 import Footer from "./footer"
 import Theme from "../components/theme"
 import Search from "../components/search"
+import RssLink from "../components/rss-link"
 
 const query = graphql`
   query LayoutQuery {
@@ -33,12 +34,20 @@ const Layout = ({ children, className, props }) => {
       <Header>
         <Logo title={siteTitle} />
         <div sx={layoutStyle.nav}>
-          <div sx={{ display: ["flex", "flex", "flex", "none"] }}>
+          <div
+            sx={{
+              display: ["flex", "flex", "flex", "none"],
+              alignItems: "center",
+              gap: 3,
+            }}
+          >
+            <RssLink />
             <Search searchIndex={siteSearchIndex.index} />
           </div>
           <Navigation />
         </div>
         <div sx={layoutStyle.appearance}>
+          <RssLink />
           <Search searchIndex={siteSearchIndex.index} />
           <Theme />
         </div>

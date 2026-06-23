@@ -101,6 +101,58 @@ module.exports = {
     },
     `gatsby-plugin-sitemap`,
     {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) =>
+              allMarkdownRemark.nodes.map(node => ({
+                title: node.frontmatter.title,
+                description: node.frontmatter.description || node.excerpt,
+                date: node.frontmatter.date,
+                url: site.siteMetadata.siteUrl + node.frontmatter.slug,
+                guid: site.siteMetadata.siteUrl + node.frontmatter.slug,
+              })),
+            query: `
+              {
+                allMarkdownRemark(
+                  sort: { order: DESC, fields: [frontmatter___date] }
+                  filter: {
+                    frontmatter: {
+                      template: { in: ["blog-post", "homelab-post"] }
+                    }
+                  }
+                ) {
+                  nodes {
+                    excerpt
+                    frontmatter {
+                      title
+                      description
+                      date
+                      slug
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/rss.xml",
+            title: `${settings.meta.title} — Blog & Homelab`,
+          },
+        ],
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Foundation`,
