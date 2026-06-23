@@ -61,6 +61,7 @@ export const tagPageQuery = graphql`
             category
             tags
             featuredImage {
+              publicURL
               childImageSharp {
                 gatsbyImageData(layout: CONSTRAINED, width: 345, height: 260)
               }

@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { graphql, Link } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
+import FeaturedImage from "../components/featured-image"
 import { RiArrowRightSLine } from "react-icons/ri"
 import {
   RiFacebookBoxFill,
@@ -35,6 +35,7 @@ export const pageQuery = graphql`
         title
         tagline
         featuredImage {
+          publicURL
           childImageSharp {
             gatsbyImageData(layout: CONSTRAINED, width: 585, height: 439)
           }
@@ -61,6 +62,7 @@ export const pageQuery = graphql`
             category
             tags
             featuredImage {
+              publicURL
               childImageSharp {
                 gatsbyImageData(layout: CONSTRAINED, width: 345, height: 260)
               }
@@ -85,6 +87,7 @@ export const pageQuery = graphql`
             category
             tags
             featuredImage {
+              publicURL
               childImageSharp {
                 gatsbyImageData(layout: CONSTRAINED, width: 345, height: 260)
               }
@@ -99,8 +102,6 @@ export const pageQuery = graphql`
 const HomePage = ({ data }) => {
   const { markdownRemark, posts, homelabPosts } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
-  const Image =
-    frontmatter.featuredImage?.childImageSharp?.gatsbyImageData || ""
   const sIcons = Icons.socialIcons.map((icons, index) => {
     return (
       <div key={"social icons" + index}>
@@ -266,15 +267,11 @@ const HomePage = ({ data }) => {
           </div>
         </div>
         <div>
-          {Image ? (
-            <GatsbyImage
-              image={Image}
-              alt={frontmatter.title + " - Featured image"}
-              className="featured-image"
-            />
-          ) : (
-            ""
-          )}
+          <FeaturedImage
+            image={frontmatter.featuredImage}
+            alt={frontmatter.title + " - Featured image"}
+            className="featured-image"
+          />
         </div>
       </div>
       <BlogListHome

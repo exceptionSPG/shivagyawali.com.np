@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { Link, graphql } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
+import FeaturedImage from "../components/featured-image"
 import { RiArrowRightLine, RiArrowLeftLine } from "react-icons/ri"
 
 import Layout from "../components/layout"
@@ -107,15 +107,11 @@ const Post = ({ data, pageContext }) => {
               <CategoryBadge category={frontmatter.category} />
             </div>
           </section>
-          {Image ? (
-            <GatsbyImage
-              image={Image}
-              alt={frontmatter.title + " - Featured image"}
-              className="featured-image"
-            />
-          ) : (
-            ""
-          )}
+          <FeaturedImage
+            image={frontmatter.featuredImage}
+            alt={frontmatter.title + " - Featured image"}
+            className="featured-image"
+          />
         </header>
 
         <div
@@ -145,6 +141,7 @@ export const pageQuery = graphql`
         category
         tags
         featuredImage {
+          publicURL
           childImageSharp {
             gatsbyImageData(layout: FULL_WIDTH)
           }

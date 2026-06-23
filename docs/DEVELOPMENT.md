@@ -247,6 +247,27 @@ Decap collection + folder + a `*-post` template + a landing page + a menu entry.
   homelab posts (`template` in `[blog-post, homelab-post]`). So a category like
   "Raspberry Pi" can collect posts from both sections.
 
+### 2026-06-22 — Production build fixes (first green deploy)
+
+Getting the first production build to pass surfaced a few issues:
+
+- **Node version:** the Netlify build was effectively on Node 14/18, but the
+  upgraded dependency tree (`sass`, `cheerio`, `undici`, etc.) needs Node 20+
+  and uses the Node-20 `File` global (`gatsby-plugin-offline` crashed with
+  `File is not defined`). Set to **20** in both `.node-version` and
+  `netlify.toml`. Note: `.node-version` takes precedence over `netlify.toml` on
+  Netlify, so both must agree.
+- **Featured images:** added `src/components/featured-image.js`. It renders an
+  optimized `GatsbyImage` when sharp processed the image, and falls back to a
+  plain `<img>` (via `publicURL`) for images sharp can't process — **animated
+  GIFs, SVGs, etc.** This fixes a build crash (`childImageSharp` was `null` for
+  a GIF post, so `.gatsbyImageData` threw) *and* makes GIFs actually display.
+  Used on post cards, post pages, and the home banner; every featured-image
+  GraphQL query now also requests `publicURL`.
+  - Caveat: external-URL featured images still don't render (the field resolves
+    to a local File node, so a remote URL becomes `null`). Convert those to
+    local files to show them.
+
 ---
 
 ## 4. Planned / upcoming work

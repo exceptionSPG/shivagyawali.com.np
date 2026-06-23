@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { Link } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
+import FeaturedImage from "./featured-image"
 import { CategoryBadge, TagList } from "./taxonomy-badges"
 
 const PostCard = ({ data }) => (
@@ -11,10 +11,10 @@ const PostCard = ({ data }) => (
       bg: "cardBg",
     }}
   >
-    {data.frontmatter.featuredImage?.childImageSharp?.gatsbyImageData ? (
+    {data.frontmatter.featuredImage ? (
       <Link to={data.frontmatter.slug}>
-        <GatsbyImage
-          image={data.frontmatter.featuredImage.childImageSharp.gatsbyImageData}
+        <FeaturedImage
+          image={data.frontmatter.featuredImage}
           alt={data.frontmatter.title + " - Featured image"}
           className="featured-image"
         />
