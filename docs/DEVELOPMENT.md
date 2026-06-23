@@ -268,14 +268,26 @@ Getting the first production build to pass surfaced a few issues:
     to a local File node, so a remote URL becomes `null`). Convert those to
     local files to show them.
 
+### 2026-06-23 — Editorial workflow (drafts)
+
+- Enabled Decap's editorial workflow (`publish_mode: editorial_workflow` in
+  `static/admin/config.yml`). New/edited entries now become **drafts** instead
+  of publishing immediately, and move through **Drafts → In Review → Ready** in
+  the CMS "Workflow" tab.
+- Each draft lives on its own branch/PR (via git-gateway), so nothing reaches
+  the live site until you hit Publish — which merges it to `main` and triggers
+  the Netlify build. Ideal for jotting ideas in the CMS without going live.
+- If Netlify Deploy Previews are enabled, each draft PR also gets a preview URL,
+  so you can see a draft rendered before publishing it.
+
 ---
 
 ## 4. Planned / upcoming work
 
 Tracked for future passes (not yet implemented):
 
-- "Add pages" in Decap (a folder Pages collection) plus the editorial
-  draft/publish workflow (`publish_mode: editorial_workflow`).
+- "Add pages" in Decap (a folder Pages collection) so you can create arbitrary
+  pages from the CMS.
 - RSS feed (`/feed` or `/rss`).
 - Optional: make the menu editable from Decap instead of the repo JSON file.
 - Upgrade theme-ui stack to `^0.17.x` and remove the `legacy-peer-deps` flag
