@@ -8,6 +8,10 @@ backend:
     uploadMedia: "[skip ci] Upload “{{path}}”"
     deleteMedia: "[skip ci] Delete “{{path}}”"
 
+# Editorial workflow: new/edited entries become drafts and move through
+# Drafts → In Review → Ready before they are published (merged) to the site.
+publish_mode: editorial_workflow
+
 # Uncomment local_backend when you need to develop in your local
 #local_backend: true # run `npx decap-server` for local testing
 
