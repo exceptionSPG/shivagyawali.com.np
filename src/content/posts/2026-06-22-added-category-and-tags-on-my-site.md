@@ -9,7 +9,6 @@ tags:
   - improvements
   - tags-added
   - categories-added
-  - ""
 ---
 This is my test post after adding category and tags feature. 
 

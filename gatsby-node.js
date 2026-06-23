@@ -1,6 +1,6 @@
 const path = require("path")
 const { createFilePath } = require(`gatsby-source-filesystem`)
-const { tagPath, categoryPath } = require(`./src/util/taxonomy`)
+const { tagPath, categoryPath, kebabCase } = require(`./src/util/taxonomy`)
 
 // Declare category/tags on the frontmatter so GraphQL queries don't fail
 // while posts are still being backfilled (Gatsby keeps inferring the rest).
@@ -105,6 +105,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // Create paginated tag pages (/tags/<slug>/)
   const tagTemplate = path.resolve(`./src/templates/tags.js`)
   result.data.tagsGroup.group.forEach(tag => {
+    // Skip empty/blank tag values so we never collide with /tags/ (the
+    // redirect page) or generate a bogus /tags// page.
+    if (!tag.fieldValue || !kebabCase(tag.fieldValue)) return
     const tagNumPages = Math.ceil(tag.totalCount / postsPerPage)
     const base = tagPath(tag.fieldValue)
     Array.from({ length: tagNumPages }).forEach((_, i) => {
@@ -125,6 +128,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // Create paginated category pages (/category/<slug>/)
   const categoryTemplate = path.resolve(`./src/templates/category.js`)
   result.data.categoriesGroup.group.forEach(category => {
+    if (!category.fieldValue || !kebabCase(category.fieldValue)) return
     const catNumPages = Math.ceil(category.totalCount / postsPerPage)
     const base = categoryPath(category.fieldValue)
     Array.from({ length: catNumPages }).forEach((_, i) => {
