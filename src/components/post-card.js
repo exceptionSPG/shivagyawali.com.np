@@ -11,7 +11,7 @@ const PostCard = ({ data }) => (
       bg: "cardBg",
     }}
   >
-    {data.frontmatter.featuredImage ? (
+    {data.frontmatter.featuredImage?.childImageSharp?.gatsbyImageData ? (
       <Link to={data.frontmatter.slug}>
         <GatsbyImage
           image={data.frontmatter.featuredImage.childImageSharp.gatsbyImageData}

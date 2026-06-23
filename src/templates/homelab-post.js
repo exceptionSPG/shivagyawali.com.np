@@ -58,9 +58,8 @@ const Pagination = props => (
 const HomelabPost = ({ data, pageContext }) => {
   const { markdownRemark } = data
   const { frontmatter, html, excerpt } = markdownRemark
-  const Image = frontmatter.featuredImage
-    ? frontmatter.featuredImage.childImageSharp.gatsbyImageData
-    : ""
+  const Image =
+    frontmatter.featuredImage?.childImageSharp?.gatsbyImageData || ""
   const { previous, next } = pageContext
 
   return (
