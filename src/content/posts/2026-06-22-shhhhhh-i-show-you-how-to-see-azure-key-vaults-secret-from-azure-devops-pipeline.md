@@ -36,15 +36,11 @@ Pre-requisite/ Assumptions:
 
 ![](/assets/6-project-level-queue-setting.png)
 
-
-
 On Organizational level:
 
 ![](/assets/7-organizational-level-setting.png)
 
 **YOU MUST TURN IT OFF, IF YOU HAVE ENABLED IT FOR DEBUGGING PURPORSE.**
-
-
 
 * Service Connection to connect to Azure Key Vault
 * Curiosity to learn
@@ -67,6 +63,136 @@ This way, you can view the secrets on your pipeline build log... but, be cautiou
 
 \\[ I will add image here, once I get it... couldn't create Azure Key vault on my student azure account ].
 
+
+
+Update: I came to know about Managed Identity and we can Create one without Microsoft Entra ID app registration to connect to Azure KeyVault from Azure DevOps. 
+
+# Here is my PoC:
+
+## Create Managed Identity on Azure Portal:
+
+![](/assets/20_3-create-managed-identity.png)
+
+Add resources (specially, Key Vault) that this managed identity can read.
+
+## Create Azure Key Vault, and add your secrets:
+
+I created Azure Key Vault using azcli as I was facing some policy issue on UI:
+
+```
+az keyvault create --location swedencentral --name KV-Kailaba-Core --resource-group RG-ADO
+
+az keyvault secret list --vault-name "KV-Kailaba-Core"
+```
+
+I added SuperSecret secret object, 
+
+![](/assets/20_4-secret-created.png)
+
+
+
+output:
+
+![](/assets/27-secret-list-azcli.png)
+
+
+
+
+
+## Assign Access to Managed Identity to read Key Vault Secrets:
+
+Assign the \`Key Vault Secrets User\` built-in role to give access to Managed Identity to be able to read secret contents.
+
+![](/assets/20_1-role-assignment.png)
+
+
+
+Select our Managed Identity as role-member:
+
+![](/assets/20_2-managed-identity-selection.png)
+
+
+
+Now, let's go to Azure Devops side:
+
+## Create Azure Resource Manager on Azure DevOps Project settings using Managed Identity:
+
+![](/assets/20-service-connectionarm.png)
+
+
+
+## Add AzureKeyVault Task:
+
+Now, adding AzureKeyVault task on our pipeline to fetch secrets from key vault:
+
+```
+name: $(date:yy).$(date:MMdd)$(rev:.r)
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+  - task: AzureKeyVault@2
+    inputs:
+      azureSubscription: 'KVReaderSC'
+      KeyVaultName: 'KV-Kailaba-Core'
+      SecretsFilter: 'SuperSecret'
+      RunAsPreJob: true
+
+  - script: |
+      echo "Printing fetched secret value"
+      echo "================"
+      echo "$(SuperSecret)"
+      echo "================="
+```
+
+
+
+It triggers the pipeline if we commit on main. For the first time, if the service connection wasn't already permitted to all pipelines, it asks for permission.
+
+![](/assets/21-1-ask-permission.png)
+
+Let's check pipeline log:
+
+![](/assets/22-secret-masked.png)
+
+
+
+
+
+It shows secret as \*\**.
+
+
+
+## Now, let's add Run-time variable to override the secret variable:
+
+![](/assets/23-adding-run-time-variable.png)
+
+Run the pipeline with 1-variable defined (the one that you want to debug):
+
+![](/assets/24-run-pipeline-with-variable.png)
+
+
+
+
+
+Voilaa... pipeline failed (**that's what we want here**..) and it shows the secret value it fetched..... 
+
+![](/assets/25-secret-shown.png)
+
+
+
+It complains that "Overwriting readonly variable '**SuperSecret**' is not permitted." Bon, les gars, allez vite... tomate salade sans oignon... 😂😂 (this was exact my reaction, when I found this trick, I am not sure if I am the first one who got this idea :hehe)
+
+
+
+
+
+
+
 Some other ways to see the value of secrets are discussed here:
 
 * Split variable characters, or write out to a file: <https://stackoverflow.com/questions/62299591/azure-pipelines-accessing-secret-variables>
@@ -87,15 +213,13 @@ Some other ways to see the value of secrets are discussed here:
         Write-Host $characters
 ```
 
-
-
 * Write to a file and publish file as artifact: <https://praveenkumarsreeram.com/2022/11/27/azure-devops-tips-and-tricks-23-how-to-view-the-secret-variables-of-a-variable-group/>
 * He also faced issue like me, and so found a solution (write to a file and read): <https://blog.robsewell.com/blog/when-you-really-want-to-see-your-azure-devops-secret-variable-values/>
 
-**So, which approach should you use?**
+## **So, which approach should you use?**
 
 Since, my idea, of overriding the variable value, needs a special settings to be set OFF. If you already have this pre-requisite, or can do so by yourself, then, my idea will give you instant help. You don't need to do extra steps. 
 
 But, if you can't fulfil the pre-requisite, then, these alternative approach will still help you debug your issue. 
 
-Hope this helps. You can subscribe to my feed, or get connected with [me on different platforms](https://shivagyawali.com.np/about). Happy reading :)
+Hope this helps. You can [subscribe to my feed](https://shivagyawali.com.np/rss.xml),  or [explore my Homelab](https://shivagyawali.com.np/homelab), or get connected with [me on different platforms](https://shivagyawali.com.np/about). Happy reading :)
