@@ -29,17 +29,9 @@ Next, to install Tailscale Android Client. Woof, [official Tailscale Android ](h
 
 I got one [here](https://tailscale.en.uptodown.com/android/download/1012269734-x). I browsed internet from my Bluetooth tethering, and then downloaded the earliest version that supports android 5.1+, for me it [was](https://tailscale.en.uptodown.com/android/download/1012269734-x). 
 
-
-
-
-
 Okay, download succeeded, and I installed it.
 
 ![](/assets/tailscale-installed.jpg)
-
-
-
-
 
 Then, the most awaited moment for me was: to add this device to my Tailscale network and then enable run as exit node.
 
@@ -53,9 +45,23 @@ I don't know what "Input the code on your screen" means or what is the code here
 
 ![](/assets/add-a-device.png)
 
-
-
 Been ~3 hours, I am tinkering in it. Let's see if I could add it or not. I will update this post as if I could achieve so. 
+
+Update (after ~40 minutes): olalala, voilaaaa... I did find a way.
+
+![](/assets/ididit.jpg)
+
+So, now I can run this device as Exit Node, and voilaa... I loved it. 
+
+How I did it?
+
+I logged out, and there was just two options for login on 1.62, one way is Login with google and another way was Other options. I chose other options, and it opened in browser and below it, I could see, login with QR code. 
+
+Voilaa, I scanned QR code from my main account device, and voilaa.. it is added to my Tailscale network. 
+
+To be complete, I enabled this device as Exit node (from settings as well) and then tested if it works or not. Yes, it does. 
+
+
 
 
 
