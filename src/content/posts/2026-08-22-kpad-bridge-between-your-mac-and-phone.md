@@ -13,7 +13,7 @@ tags:
 ---
 Hey, 
 
-Our Senior Platform Engineer doesn't really like vibe-coding or coding with AI - however, not on all the cases. There was a exception - and he shared me what part of vibe-coding does he vote for?
+Our Senior Platform Engineer doesn't really like vibe-coding or coding with AI - however, not on all the cases. There was an exception - and he shared me what part of vibe-coding does he vote for?
 
 Recently, during our coffee-talk, I said, I was working on a project (yes, at that time, I haven't thought of a name for it - which later turned to be [kPad](https://kpad.kailaba.com/)) that would allow me to control mac using my phone (specialy just from a browser). Then, he asked me, "What's your motivation?"
 
