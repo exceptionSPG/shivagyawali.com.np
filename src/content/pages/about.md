@@ -125,15 +125,7 @@ Currently Reading:
 * **Les fantomes de lockerbie** - par Gerard de Villiers (strategy: Bed time read until I fall asleep ;) )
 * ***1*984** (french version) - par George Orwell (strategy: companion for short-travel on train/bus)
 * **Cesar Imperator** - par Max Gallo
-* **La Ferme des animaux**
-
-   - par George Orwell (listening and reading simultaneously on my 
-
-  [homelab](https://shivagyawali.com.np/homelab)
-
-   setup).
-
-
+* **La Ferme des animaux** - par George Orwell (listening and reading simultaneously on my[ homelab](https://shivagyawali.com.np/homelab) setup).
 
 On queue:
 
@@ -146,10 +138,9 @@ Finished reading:
 
 * **Il faut du temps pour rester jeune** - par Michel Drucker. (read twice). Comment j'ai trouvé? [Voir ici.](https://youtu.be/EV1T74BgZlY?si=PFXKq9mWFtlwNXn7)
 * **L'étranger** - par Albert Camus 
-* * **Annabelle** - par Lina Bengtsdotter (strategy: companion for long travel on train)
+* **Annabelle** - par Lina Bengtsdotter (strategy: companion for long travel on train)
+* **Oser écrire** - par Madeleine Chapsal (strategy: daily 14 min read, 16 min translation analysis)
 
-  * **Oser écrire** - par Madeleine Chapsal (strategy: daily 14 min read, 16 min translation analysis)
 
-  *
 
 If you want to learn french with me,[ allons y!! ici.](https://french.kailaba.com)
