@@ -4,15 +4,13 @@ title: my first sentence on every AI chat - भाइ मसँग देवन�
 slug: /blog/talk-with-ai-in-your-native-language
 date: 2026-08-22 10:01
 description: ai, vibe-coding, vibe coding, how to prompt, prompt engineering
-featuredImage: /assets/nepalima-deepseek-sanga-kura-gardai.png
+featuredImage: /assets/nepalimakuragara-first-sentence.png
 category: DevOps
 tags:
   - ai
   - howto
 ---
 I wasn't satisfied with how my AI chat is responding. The answer hasn't that much depth that I was expecting. When I read answers of the same Chat system of my colleague ([yeah, parisien, french, and so complainer..](https://shitty.shivagyawali.com.np/)), I was like, 'What the hell, your answer is so much useful.'
-
-
 
 Not until later, when I met another colleague (originally, from Russia). We were discussing something and I noticed, he was talking in Russian with his chatbot. I asked him, "What? You talk in Russian with chatbot?"
 
@@ -24,13 +22,9 @@ He then, said to me, "My friend, yes, yes actually this fellow is dumb. He needs
 
 "huh, cool, yeah that's true, often time, I struggle expressing my true sense in English. I need Nepali. holy shit, I am gonna try this man. Thanks for this."
 
-
-
 I was truly blessed to have this conversation. Now, my every chat conversation, chat session starts with this sentence \[भाइ मसँग देवनागरिमा कुरा गर।] 
 
 That means (not precisely, but closely), "Bro, talk to me in Devanagari."
-
-
 
 Then, the result?
 
@@ -46,12 +40,10 @@ Hell no, He understood Nepali too.
 
 Not always, btw. He sometimes misunderstood and does the completely opposite of what I asked him. But, then, I need to adjust him. He is learning, and so am I.
 
-
-
 voilaa... after this, I suggested to talk in Nepali (or in your native) to almost everyone that have I reach. 
 
 so, do I now, suggest (or urge) you to talk in your native language. 
 
-
-
 Here is the sample outcome of above prompt:
+
+![](/assets/nepalimaa-kura-gara.png)
