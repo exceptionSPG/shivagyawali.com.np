@@ -30,7 +30,7 @@ Then, the result?
 
 Wow, no. I am not blushing you here. It was real. I was really impressed with the improved outcome. If he misses something, I can interrupt him in my pro-Nepali, really digging down the hole. Wow. 
 
-One day, my senior Platform Engineer - saw my chat session, and said, "What, Shiva talk with copilot in Nepali? - No way" 
+One day, [my senior Platform Engineer ](https://shivagyawali.com.np/blog/kpad)- saw my chat session, and said, "What, Shiva talk with copilot in Nepali? - No way" 
 
 Haha, I laughed, and explained him my this new transition. I loved it. 
 
