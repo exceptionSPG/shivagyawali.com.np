@@ -37,6 +37,16 @@ Hello! Bonjour! Namaste! I’m Shiva Gyawali, a Cybersecurity Enthusiast with a 
 
 ## Work Experience
 
+* **Platform Engineering Trainee**\
+  [KPMG Luxembourg](https://kpmg.lu)\
+  2026 Mar - 2026 August
+
+  * Implemented a SonarQube-driven pull request gate that  automatically flags security findings and enforces mandatory reviewer  approval, blocking any merge to master until all critical  vulnerabilities are resolved.
+  * Introduced cooldown periods for NPM/PNPM dependency  installations within CI/CD pipelines, deliberately slowing package  refresh rates to create a window for detecting and mitigating emerging  supply chain attacks before they reach production.
+  * Developed real-time observability dashboards using ELK Stack and KQL,  creating proactive alerts and compliance monitoring solutions that  provided stakeholders with actionable insights into Azure resource  compliance with security requirements
+  * Remediated high-severity security findings for Azure Tenants using Microsoft Defender for Cloud, implementing automated fixes via Terraform and configuration management scripts to ensure continuous compliance.
+  * Implemented Policy as Code  solutions for Azure Portal and Azure DevOps, automating security  enforcement and reducing manual configuration overhead through robust  IaC and internal tooling contributions.
+  * Established pipeline baselines and governance models for  Microsoft Fabric and Power Platform projects, enabling secure, standardized deployment practices for low-code solutions across the enterprise.
 * **Solution Engineer**\
   [Logpoint](https://www.logpoint.com/en/)\
   *Jul 2023 – Aug 2024*
@@ -69,6 +79,8 @@ I like to explore and try new technology, technical things, and do hands-on myse
   I have had a dream to have my own app published on Play Store, and to see it installed on some other user's phone. EL Computer accomplished that dream through me.
 * **[EL Computer Web](https://elcomputerweb.kailaba.com/)**\
   [@Nabin](https://github.com/IBA4) daily complained me to publish it in app store. I was poor to pay 100$ per year for per app, so I deployed it's web version so that Nabin can use it. No doubt, you can use it too ;).
+* [kPad](https://kpad.kailaba.com)\
+  My First [Open-Source project](https://github.com/exceptionSPG/kPad) - to control mac using Phone (iOS, Android, or any).
 
 - - -
 
@@ -80,6 +92,8 @@ I love explaining things to others. I enjoy teaching, writing, and sharing. Thes
     I share useful videos for students, from (hard engineering) course content to some travel vlogs, some useful information and scholarship tips, and many more. Check it once.
 * **[काईलाबा YT](https://www.youtube.com/@official.kailaba)**\
     I read books (or, books read me?). And, I share it to the Nepali audiences in Nepali language.
+* **[Kailaba for Students ](https://student.kailaba.com)**\
+  A platform to help students apply for Erasmus Mundus and other scholarships. I guide them, review their Motivation Letter (SOPs) and CV. I also provide 1-1 consultation session.
 
 - - -
 
@@ -108,14 +122,21 @@ I am currently learning french through books. Here are the list of books I am re
 
 Currently Reading:
 
-* **Oser écrire** - par Madeleine Chapsal (strategy: daily 14 min read, 16 min translation analysis)
 * **Les fantomes de lockerbie** - par Gerard de Villiers (strategy: Bed time read until I fall asleep ;) )
-* **Annabelle** - par Lina Bengtsdotter (strategy: companion for long travel on train)
 * ***1*984** (french version) - par George Orwell (strategy: companion for short-travel on train/bus)
+* **Cesar Imperator** - par Max Gallo
+* **La Ferme des animaux**
+
+   - par George Orwell (listening and reading simultaneously on my 
+
+  [homelab](https://shivagyawali.com.np/homelab)
+
+   setup).
+
+
 
 On queue:
 
-* **Cesar Imperator** - par Max Gallo
 * **Le beau danube rouge** - Gerard de Villiers
 * **L'homme de vinci** - par Laurent Bettoni
 * ***L'Homme qui rit*** - par Victor Hugo
@@ -125,6 +146,10 @@ Finished reading:
 
 * **Il faut du temps pour rester jeune** - par Michel Drucker. (read twice). Comment j'ai trouvé? [Voir ici.](https://youtu.be/EV1T74BgZlY?si=PFXKq9mWFtlwNXn7)
 * **L'étranger** - par Albert Camus 
-*
+* * **Annabelle** - par Lina Bengtsdotter (strategy: companion for long travel on train)
+
+  * **Oser écrire** - par Madeleine Chapsal (strategy: daily 14 min read, 16 min translation analysis)
+
+  *
 
 If you want to learn french with me,[ allons y!! ici.](https://french.kailaba.com)
